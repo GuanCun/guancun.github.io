@@ -8,5 +8,5 @@
 * 后端框架：Springboot、springcloud alibaba、mybaits
 * 中间件：Mysql、RabbitMQ、Redis、Mongodb、Elasticsearch
 
-[GitHub](https://github.com/shelimingming/MJ_Mall.git)
+[GitHub](https://github.com/GuanCun/guancun.github.io)
 [Get Started](#quick-start)
