@@ -1,12 +1,12 @@
 ![logo](https://docsify.js.org/_media/icon.svg)
 
-# docsify <small>3.5</small>
+# 废柴收容中心 <small>3.5</small>
 
-> 一个神奇的文档网站生成器。
+> 羡慕你们，生活情情炒飞龙。
 
-- 简单、轻便 (压缩后 ~21kB)
-- 无需生成 html 文件
-- 众多主题
+- 我咧没本事
+- 我咧没意思
+- 我咧没前途
 
 [GitHub](https://github.com/docsifyjs/docsify/)
 [Get Started](#docsify)
