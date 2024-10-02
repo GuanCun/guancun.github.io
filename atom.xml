@@ -1,0 +1,32 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    
+    <title>冠存的独立博客</title>
+    <description>林冠存的独立博客</description>
+    <link>https://guancun.github.io/</link>
+    
+    <language>en</language>
+    <copyright>Copyright 2024, Calvin Tran</copyright>
+    <lastBuildDate>Wed, 02 Oct 2024 17:04:59 +0800</lastBuildDate>
+    <generator>Hugo - gohugo.io</generator>
+    <docs>http://cyber.harvard.edu/rss/rss.html</docs>
+    <atom:link href="https://guancun.github.io//atom.xml" rel="self" type="application/atom+xml"/>
+    
+    
+    <item>
+      <title>First</title>
+      <link>https://guancun.github.io/posts/first/</link>
+      <description>&lt;h3 id=&#34;hello-hugo&#34;&gt;Hello Hugo&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;aaa&lt;/li&gt;
+&lt;li&gt;bbb&lt;/li&gt;
+&lt;li&gt;ccc&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+      <author>GuanCun</author>
+      <guid>https://guancun.github.io/posts/first/</guid>
+      <pubDate>Wed, 02 Oct 2024 17:04:59 +0800</pubDate>
+    </item>
+    
+  </channel>
+</rss>

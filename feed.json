@@ -1,0 +1,34 @@
+{
+  "version": "https://jsonfeed.org/version/1",
+  "title": "冠存的独立博客",
+  "home_page_url": "https://guancun.github.io/",
+  "feed_url": "https://guancun.github.io/feed.json",
+  "description": "林冠存的独立博客",
+  "favicon": "https://guancun.github.io//assets/favicon.ico",
+  "expired": false,
+  "author": {
+    "name": "GuanCun",
+    "url": "https://guancun.github.io/"
+  },
+  "items": [
+    
+    
+
+    
+    {
+      "id": "916a78d701ded328cd66da58a97ef8cd28a99e84",
+      "title": "First",
+      "summary": "",
+      "content_text": "Hello Hugo aaa bbb ccc ",
+      "content_html": "\u003ch3 id=\"hello-hugo\"\u003eHello Hugo\u003c/h3\u003e\n\u003col\u003e\n\u003cli\u003eaaa\u003c/li\u003e\n\u003cli\u003ebbb\u003c/li\u003e\n\u003cli\u003eccc\u003c/li\u003e\n\u003c/ol\u003e\n",
+      "url": "https://guancun.github.io/posts/first/",
+      "date_published": "2106-02-09T104:22:00+08:00",
+      "date_modified": "2106-02-09T104:22:00+08:00",
+      "author": {
+        "name": "GuanCun",
+        "url": "https://guancun.github.io/"
+      }
+    }
+    
+  ]
+}
