@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on GuanCun 的博客</title>
+    <link>https://guancun.github.io/posts/</link>
+    <description>Recent content in Posts on GuanCun 的博客</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 22 Oct 2024 14:26:14 +0800</lastBuildDate>
+    <atom:link href="https://guancun.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>入门笔记1：Supabase 本地开发与 Vue.js 集成完整指南</title>
+      <link>https://guancun.github.io/posts/%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01supabase-%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E4%B8%8E-vue.js-%E9%9B%86%E6%88%90%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Tue, 22 Oct 2024 14:26:14 +0800</pubDate>
+      <guid>https://guancun.github.io/posts/%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01supabase-%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E4%B8%8E-vue.js-%E9%9B%86%E6%88%90%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/</guid>
+      <description>一、相关概念 BaaS（Backend as a Service）：后端即服务，提供如数据库、认证、文件存储等云端功能。Supabase 作为 BaaS 平台，默认集成了 PostgreSQL。 PostgreSQL：一种开源对象关系型数据库，支持复杂数据类型和操作，是 Supabase 的核心数据库引擎。 二、Supabase 介绍 Supabase 是一个开源的 BaaS 平台，提供类似 Firebase 的功能集，但具备更高的灵活性和可定制性。它可以在私有云或本地部署，核心功能通常包括数据库支持（如 PostgreSQL）、实时 API、身份验证、文件存储、边缘函数以及一个用于管理项目的仪表板。&#xA;三、Supabase 的本地开发 要在本地设置 Supabase，你需要安装 Supabase CLI 和 Docker Desktop。&#xA;1. 安装 Supabase CLI 在 macOS 上，通过 Homebrew 安装：&#xA;brew install supabase/tap/supabase 2. 创建并启动本地 Supabase 为新的 Supabase 项目创建一个独立的文件夹：&#xA;mkdir my-new-supabase-project &amp;amp;&amp;amp; cd my-new-supabase-project supabase init supabase start 启动成功后，访问 Studio URL 查看项目仪表盘。&#xA;3. 停止本地 Supabase supabase stop 四、在 Supabase 仪表盘添加数据 进入仪表盘的 SQL 编辑器，粘贴以下 SQL 语句并运行：</description>
+    </item>
+  </channel>
+</rss>

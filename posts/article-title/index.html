@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="zh"
+  x-data
+  :class="$store.darkMode.class()"
+  :data-theme="$store.darkMode.theme()">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>入门笔记1：Supabase 本地开发与 Vue.js 集成完整指南 | GuanCun 的博客</title>
+
+    
+
+<link rel="canonical" href="http://localhost:1313/posts/article-title/" />
+
+
+
+<meta name="author" content="GuanCun" />
+<meta name="description" content="一、相关概念 BaaS（Backend as a Service）：后端即服务，提供如数据库、认证、文件存储等云端功能。Supabase 作为 BaaS 平台，默认集成了 PostgreSQL。 PostgreSQL：一种开源对象关系型数据库，支持复杂数据类型和操作，是 Supabase 的核心数据库引擎。 二、Supabase 介绍 Supabase 是一个开源的 BaaS 平台，提供类似 Firebase 的功能集，但具备更高的灵活性和可定制性。它可以在私有云或本地部署，核心功能通常包括数据库支持（如 PostgreSQL）、实时 API、身份验证、文件存储、边缘函数以及一个用于管理项目的仪表板。
+三、Supabase 的本地开发 要在本地设置 Supabase，你需要安装 Supabase CLI 和 Docker Desktop。
+1. 安装 Supabase CLI 在 macOS 上，通过 Homebrew 安装：
+brew install supabase/tap/supabase 2. 创建并启动本地 Supabase 为新的 Supabase 项目创建一个独立的文件夹：
+mkdir my-new-supabase-project &amp;amp;&amp;amp; cd my-new-supabase-project supabase init supabase start ![[Pasted image 20241009140949.png]]
+启动成功后，访问 Studio URL 查看项目仪表盘。
+3. 停止本地 Supabase supabase stop 四、在 Supabase 仪表盘添加数据 进入仪表盘的 SQL 编辑器，粘贴以下 SQL 语句并运行：" />
+
+
+<meta name="keywords" content="Tag1,Tag2">
+
+
+
+<meta name="generator" content="Hugo 0.128.2">
+
+
+<meta property="og:url" content="http://localhost:1313/posts/article-title/">
+  <meta property="og:site_name" content="GuanCun 的博客">
+  <meta property="og:title" content="入门笔记1：Supabase 本地开发与 Vue.js 集成完整指南">
+  <meta property="og:description" content="一、相关概念 BaaS（Backend as a Service）：后端即服务，提供如数据库、认证、文件存储等云端功能。Supabase 作为 BaaS 平台，默认集成了 PostgreSQL。 PostgreSQL：一种开源对象关系型数据库，支持复杂数据类型和操作，是 Supabase 的核心数据库引擎。 二、Supabase 介绍 Supabase 是一个开源的 BaaS 平台，提供类似 Firebase 的功能集，但具备更高的灵活性和可定制性。它可以在私有云或本地部署，核心功能通常包括数据库支持（如 PostgreSQL）、实时 API、身份验证、文件存储、边缘函数以及一个用于管理项目的仪表板。
+三、Supabase 的本地开发 要在本地设置 Supabase，你需要安装 Supabase CLI 和 Docker Desktop。
+1. 安装 Supabase CLI 在 macOS 上，通过 Homebrew 安装：
+brew install supabase/tap/supabase 2. 创建并启动本地 Supabase 为新的 Supabase 项目创建一个独立的文件夹：
+mkdir my-new-supabase-project &amp;&amp; cd my-new-supabase-project supabase init supabase start ![[Pasted image 20241009140949.png]]
+启动成功后，访问 Studio URL 查看项目仪表盘。
+3. 停止本地 Supabase supabase stop 四、在 Supabase 仪表盘添加数据 进入仪表盘的 SQL 编辑器，粘贴以下 SQL 语句并运行：">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-10-22T14:26:14+08:00">
+    <meta property="article:modified_time" content="2024-10-22T14:26:14+08:00">
+    <meta property="article:tag" content="Tag1">
+    <meta property="article:tag" content="Tag2">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="入门笔记1：Supabase 本地开发与 Vue.js 集成完整指南">
+  <meta name="twitter:description" content="一、相关概念 BaaS（Backend as a Service）：后端即服务，提供如数据库、认证、文件存储等云端功能。Supabase 作为 BaaS 平台，默认集成了 PostgreSQL。 PostgreSQL：一种开源对象关系型数据库，支持复杂数据类型和操作，是 Supabase 的核心数据库引擎。 二、Supabase 介绍 Supabase 是一个开源的 BaaS 平台，提供类似 Firebase 的功能集，但具备更高的灵活性和可定制性。它可以在私有云或本地部署，核心功能通常包括数据库支持（如 PostgreSQL）、实时 API、身份验证、文件存储、边缘函数以及一个用于管理项目的仪表板。
+三、Supabase 的本地开发 要在本地设置 Supabase，你需要安装 Supabase CLI 和 Docker Desktop。
+1. 安装 Supabase CLI 在 macOS 上，通过 Homebrew 安装：
+brew install supabase/tap/supabase 2. 创建并启动本地 Supabase 为新的 Supabase 项目创建一个独立的文件夹：
+mkdir my-new-supabase-project &amp;&amp; cd my-new-supabase-project supabase init supabase start ![[Pasted image 20241009140949.png]]
+启动成功后，访问 Studio URL 查看项目仪表盘。
+3. 停止本地 Supabase supabase stop 四、在 Supabase 仪表盘添加数据 进入仪表盘的 SQL 编辑器，粘贴以下 SQL 语句并运行：">
+
+
+
+
+<link rel="stylesheet" href="/css/output.css" />
+
+
+
+
+    
+
+
+<style>
+  pre {
+    padding: 1em;
+    overflow: auto;
+  }
+</style>
+
+
+
+
+
+
+
+
+
+    
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+
+  <body x-data="{
+    flip: false,
+  }">
+    
+    <div id="dream-global-bg"></div>
+
+    
+<nav x-data="{ isSticky: false }"
+  x-init="window.addEventListener('scroll', () => { isSticky = window.scrollY > 30 })"
+  class="sticky top-0 z-30 mt-4 lg:mt-8 py-4"
+  :class="{ 'bg-base-100 shadow-lg dark:border-b dark:border-base-content/30': isSticky }">
+
+  
+  <div class="container flex justify-between px-4">
+  
+    <section class="flex items-center gap-4">
+      <div class="avatar cursor-pointer hover:online" @click="flip = !flip" title="翻转一下！">
+        <div class="h-10 rounded-full">
+          <img src="/me/avatar.png" alt="GuanCun 的博客" />
+        </div>
+      </div>
+
+      
+      <div>
+        
+        <a href="http://localhost:1313/" class="text-lg font-semibold cursor-pointer">
+          GuanCun 的博客
+        </a>
+        
+        
+        <div class="text-base-content/60 text-sm">这里有一些我最近写的文章，欢迎阅读。</div>
+        
+      </div>
+      
+    </section>
+
+    <div class="dropdown dropdown-end sm:hidden">
+      <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
+        <ion-icon name="menu" class="text-2xl"></ion-icon>
+      </div>
+      <ul class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-md">
+        
+
+
+<li>
+  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="关于">
+    <ion-icon name="information-circle"></ion-icon>关于</div>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+  <a class="group inline-flex items-center p-2 cursor-pointer" href="/search" title="搜索">
+    <ion-icon name="search"></ion-icon>
+    搜索
+  </a>
+</li>
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="https://github.com/GuanCun" target="_blank" title="GitHub">
+    
+    <ion-icon name="logo-github"></ion-icon>
+    
+    GitHub
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="归档">
+    <ion-icon name="archive"></ion-icon>
+    归档
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="所有分类">
+    <ion-icon name="grid"></ion-icon>
+    所有分类
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/tags" title="所有标签">
+    <ion-icon name="pricetags"></ion-icon>
+    所有标签
+  </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </div>
+    <section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4">
+      
+      
+      
+      <div role="link" tabindex="0" class="text-sm font-semibold cursor-pointer hover:underline" @click="flip = !flip" title="关于">关于</div>
+      
+      
+
+      
+      
+        
+      
+
+      
+
+      
+      
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/search" title="搜索">
+  <ion-icon class="group-hover:text-primary-content" name="search"></ion-icon>
+</a>
+
+
+      
+      
+
+
+
+  
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://github.com/GuanCun" target="_blank" title="GitHub">
+    <ion-icon class="group-hover:text-primary-content" name="logo-github"></ion-icon>
+  </a>
+  
+
+
+
+      
+
+      <div class="dropdown dropdown-end dropdown-hover">
+        <div tabindex="0" role="button" class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" aria-label="Select an option">
+          <ion-icon class="group-hover:text-primary-content text-xl" name="menu"></ion-icon>
+        </div>
+        <ul class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-xl">
+          
+          
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="归档">
+    <ion-icon name="archive"></ion-icon>
+    归档
+  </a>
+</li>
+
+
+          
+          
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="所有分类">
+    <ion-icon name="grid"></ion-icon>
+    所有分类
+  </a>
+</li>
+
+
+          
+          
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/tags" title="所有标签">
+    <ion-icon name="pricetags"></ion-icon>
+    所有标签
+  </a>
+</li>
+
+
+          
+
+          
+          
+
+
+
+
+
+
+
+
+
+
+          
+        </ul>
+      </div>
+      
+    </section>
+  </div>
+</nav>
+
+
+    <div class="flip-container" :class="{ 'flip-it': flip }">
+      <div class="flipper">
+        <div class="front">
+          <div class="container">
+            
+<div class="mt-4 px-4">
+  
+  <div class="relative" x-data="{ height: '' }" x-init="height = $el.scrollHeight + 'px'">
+  
+    
+    <div class="absolute right-0 lg:w-36 xl:w-48 hidden lg:block" :style="{ height }">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#一相关概念">一、相关概念</a></li>
+        <li><a href="#二supabase-介绍">二、Supabase 介绍</a></li>
+        <li><a href="#三supabase-的本地开发">三、Supabase 的本地开发</a></li>
+        <li><a href="#四在-supabase-仪表盘添加数据">四、在 Supabase 仪表盘添加数据</a></li>
+        <li><a href="#五在-vuejs-中使用-supabase">五、在 Vue.js 中使用 Supabase</a></li>
+        <li><a href="#六部署方式">六、部署方式</a></li>
+        <li><a href="#七参考链接">七、参考链接</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+      <div class="dream-adsense px-5">
+      
+      </div>
+    </div>
+    
+    <article class="mx-auto prose prose-quoteless dark:prose-invert" id="dream-single-post-main" itemscope itemtype="http://schema.org/Article">
+      
+  <meta itemprop="name" content="入门笔记1：Supabase 本地开发与 Vue.js 集成完整指南">
+  <meta itemprop="description" content="一、相关概念 BaaS（Backend as a Service）：后端即服务，提供如数据库、认证、文件存储等云端功能。Supabase 作为 BaaS 平台，默认集成了 PostgreSQL。 PostgreSQL：一种开源对象关系型数据库，支持复杂数据类型和操作，是 Supabase 的核心数据库引擎。 二、Supabase 介绍 Supabase 是一个开源的 BaaS 平台，提供类似 Firebase 的功能集，但具备更高的灵活性和可定制性。它可以在私有云或本地部署，核心功能通常包括数据库支持（如 PostgreSQL）、实时 API、身份验证、文件存储、边缘函数以及一个用于管理项目的仪表板。
+三、Supabase 的本地开发 要在本地设置 Supabase，你需要安装 Supabase CLI 和 Docker Desktop。
+1. 安装 Supabase CLI 在 macOS 上，通过 Homebrew 安装：
+brew install supabase/tap/supabase 2. 创建并启动本地 Supabase 为新的 Supabase 项目创建一个独立的文件夹：
+mkdir my-new-supabase-project &amp;&amp; cd my-new-supabase-project supabase init supabase start ![[Pasted image 20241009140949.png]]
+启动成功后，访问 Studio URL 查看项目仪表盘。
+3. 停止本地 Supabase supabase stop 四、在 Supabase 仪表盘添加数据 进入仪表盘的 SQL 编辑器，粘贴以下 SQL 语句并运行：">
+  <meta itemprop="datePublished" content="2024-10-22T14:26:14+08:00">
+  <meta itemprop="dateModified" content="2024-10-22T14:26:14+08:00">
+  <meta itemprop="wordCount" content="272">
+  <meta itemprop="keywords" content="Tag1,Tag2">
+
+      <header>
+        <h1 itemprop="headline">入门笔记1：Supabase 本地开发与 Vue.js 集成完整指南</h1>
+        <p class="text-sm">
+          
+            <span data-format="luxon">2024-10-22T14:26:14&#43;08:00</span>
+          
+
+          | <span>2分钟阅读</span>
+
+          
+          | <span>更新于
+            
+              <span data-format="luxon">2024-10-22T14:26:14&#43;08:00</span>
+            </span>
+          
+        </p>
+        <div class="flex justify-between">
+          <div class="flex items-center">
+  
+  <span>@</span>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    <span itemprop="name">GuanCun</span>
+  
+  </span>
+</div>
+
+
+          <div class="flex items-center gap-2">
+  
+  
+
+  
+  
+  
+  
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://x.com/intent/post?text=%e5%85%a5%e9%97%a8%e7%ac%94%e8%ae%b01%ef%bc%9aSupabase%20%e6%9c%ac%e5%9c%b0%e5%bc%80%e5%8f%91%e4%b8%8e%20Vue.js%20%e9%9b%86%e6%88%90%e5%ae%8c%e6%95%b4%e6%8c%87%e5%8d%97&amp;url=http://localhost:1313/posts/article-title/" target="_blank" rel="noopener noreferrer"
+      title="Share on X">
+      <ion-icon class="group-hover:text-primary-content" name="logo-x"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://facebook.com/sharer/sharer.php?u=http://localhost:1313/posts/article-title/" target="_blank" rel="noopener noreferrer"
+      title="Share on Facebook">
+      <ion-icon class="group-hover:text-primary-content" name="logo-facebook"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://wa.me/?text=%e5%85%a5%e9%97%a8%e7%ac%94%e8%ae%b01%ef%bc%9aSupabase%20%e6%9c%ac%e5%9c%b0%e5%bc%80%e5%8f%91%e4%b8%8e%20Vue.js%20%e9%9b%86%e6%88%90%e5%ae%8c%e6%95%b4%e6%8c%87%e5%8d%97%20http://localhost:1313/posts/article-title/" target="_blank" rel="noopener noreferrer"
+      title="Share on WhatsApp">
+      <ion-icon class="group-hover:text-primary-content" name="logo-whatsapp"></ion-icon>
+    </a>
+  
+
+  
+  
+</div>
+
+        </div>
+      </header>
+
+      
+
+      <h3 id="一相关概念">一、相关概念</h3>
+<ul>
+<li><strong>BaaS（Backend as a Service）</strong>：后端即服务，提供如数据库、认证、文件存储等云端功能。Supabase 作为 BaaS 平台，默认集成了 PostgreSQL。</li>
+<li><strong>PostgreSQL</strong>：一种开源对象关系型数据库，支持复杂数据类型和操作，是 Supabase 的核心数据库引擎。</li>
+</ul>
+<h3 id="二supabase-介绍">二、Supabase 介绍</h3>
+<p>Supabase 是一个开源的 BaaS 平台，提供类似 Firebase 的功能集，但具备更高的灵活性和可定制性。它可以在私有云或本地部署，核心功能通常包括<strong>数据库支持（如 PostgreSQL）、实时 API、身份验证、文件存储、边缘函数以及一个用于管理项目的仪表板</strong>。</p>
+<h3 id="三supabase-的本地开发">三、Supabase 的本地开发</h3>
+<p>要在本地设置 Supabase，你需要安装 Supabase CLI 和 Docker Desktop。</p>
+<h4 id="1-安装-supabase-cli">1. 安装 Supabase CLI</h4>
+<p>在 macOS 上，通过 Homebrew 安装：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install supabase/tap/supabase
+</span></span></code></pre></div><h4 id="2-创建并启动本地-supabase">2. 创建并启动本地 Supabase</h4>
+<p>为新的 Supabase 项目创建一个独立的文件夹：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir my-new-supabase-project <span style="color:#f92672">&amp;&amp;</span> cd my-new-supabase-project
+</span></span><span style="display:flex;"><span>supabase init
+</span></span><span style="display:flex;"><span>supabase start
+</span></span></code></pre></div><p>![[Pasted image 20241009140949.png]]</p>
+<p>启动成功后，访问 <a href="http://127.0.0.1:54323">Studio URL</a> 查看项目仪表盘。</p>
+<h4 id="3-停止本地-supabase">3. 停止本地 Supabase</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>supabase stop
+</span></span></code></pre></div><h3 id="四在-supabase-仪表盘添加数据">四、在 Supabase 仪表盘添加数据</h3>
+<ol>
+<li>
+<p>进入仪表盘的 SQL 编辑器，粘贴以下 SQL 语句并运行：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#75715e">-- 创建表
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> countries (
+</span></span><span style="display:flex;"><span>  id bigint <span style="color:#66d9ef">primary</span> <span style="color:#66d9ef">key</span> <span style="color:#66d9ef">generated</span> always <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">identity</span>,
+</span></span><span style="display:flex;"><span>  name text <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- 插入示例数据
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> countries (name) <span style="color:#66d9ef">values</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#e6db74">&#39;Canada&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#e6db74">&#39;United States&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#e6db74">&#39;Mexico&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- 启用行级安全
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">table</span> countries enable <span style="color:#66d9ef">row</span> <span style="color:#66d9ef">level</span> <span style="color:#66d9ef">security</span>;
+</span></span></code></pre></div></li>
+<li>
+<p>添加 RLS 策略，允许匿名用户读取数据：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">create</span> policy <span style="color:#e6db74">&#34;public can read countries&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">on</span> <span style="color:#66d9ef">public</span>.countries
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> <span style="color:#66d9ef">select</span> <span style="color:#66d9ef">to</span> anon
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> (<span style="color:#66d9ef">true</span>);
+</span></span></code></pre></div></li>
+</ol>
+<h3 id="五在-vuejs-中使用-supabase">五、在 Vue.js 中使用 Supabase</h3>
+<h4 id="1-创建-vue-项目">1. 创建 Vue 项目</h4>
+<p>使用 Vite 创建一个新的 Vue 项目：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm create vite@latest
+</span></span></code></pre></div><h4 id="2-安装-supabase-客户端库">2. 安装 Supabase 客户端库</h4>
+<p>在 Vue 项目根目录安装 Supabase 客户端库：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install @supabase/supabase-js
+</span></span></code></pre></div><h4 id="3-配置-supabase-客户端">3. 配置 Supabase 客户端</h4>
+<p>在 <code>/src/lib</code> 目录中创建 <code>supabaseClient.js</code> 文件，初始化 Supabase 客户端：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">createClient</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@supabase/supabase-js&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">supabase</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">createClient</span>(<span style="color:#e6db74">&#39;&lt;your-api-url&gt;&#39;</span>, <span style="color:#e6db74">&#39;&lt;your-anon-key&gt;&#39;</span>)
+</span></span></code></pre></div><blockquote>
+<p>你可以在 <code>supabase start</code> 启动后的日志中找到 API URL 和 anon key。</p>
+</blockquote>
+<h4 id="4-获取数据并显示在-vue-应用中">4. 获取数据并显示在 Vue 应用中</h4>
+<p>修改 <code>App.vue</code> 文件，从 Supabase 数据库获取数据并显示：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">setup</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">ref</span>, <span style="color:#a6e22e">onMounted</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">supabase</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./lib/supabaseClient&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">countries</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ref</span>([])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getCountries</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">data</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">supabase</span>.<span style="color:#a6e22e">from</span>(<span style="color:#e6db74">&#39;countries&#39;</span>).<span style="color:#a6e22e">select</span>()
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">countries</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">onMounted</span>(() =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">getCountries</span>()
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span> <span style="color:#f92672">v-for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;country in countries&#34; :key=&#34;country.id&#34;</span>&gt;{{ <span style="color:#a6e22e">country.name</span> }}&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
+</span></span></code></pre></div><p>通过上述步骤，你将能够在前端界面上看到从 Supabase 数据库获取的国家列表。</p>
+<h3 id="六部署方式">六、部署方式</h3>
+<ol>
+<li><a href="https://supabase.com/dashboard">官方托管平台</a></li>
+<li><a href="https://supabase.com/docs/guides/hosting/overview">自托管</a></li>
+<li><a href="https://supabase.com/docs/guides/local-development">本地开发</a></li>
+</ol>
+<h3 id="七参考链接">七、参考链接</h3>
+<ul>
+<li><a href="https://supabase.com/docs/guides/cli/getting-started?queryGroups=platform&amp;platform=macos#installing-the-supabase-cli">Supabase CLI 安装指南</a></li>
+<li><a href="https://supabase.com/docs/guides/getting-started/quickstarts/vue">Vue 与 Supabase 集成指南</a></li>
+<li><a href="https://supabase.com/docs/reference/cli/introduction">Supabase CLI 命令参考</a></li>
+</ul>
+
+
+      
+      <div class="divider"></div>
+      <div class="flex flex-col md:flex-row justify-between gap-4 py-4">
+        
+        <div></div>
+        
+
+        
+        <a class="group btn btn-outline" href="/posts/%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01supabase-%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E4%B8%8E-vue.js-%E9%9B%86%E6%88%90%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/" title="">
+          <div class="inline-flex flex-col items-end">
+            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">下一页</span>
+            <span class="max-w-48 truncate"></span>
+          </div>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </a>
+        
+      </div>
+      
+    </article>
+  </div>
+
+  
+  <div class="divider max-w-[65ch] mx-auto"></div>
+
+  <section class="max-w-[65ch] mx-auto space-y-4">
+    
+<article>
+  <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+        this.page.identifier = '\/posts\/article-title\/';
+        this.page.title = '入门笔记1：Supabase 本地开发与 Vue.js 集成完整指南';
+        this.page.url = 'http:\/\/localhost:1313\/posts\/article-title\/';
+    };
+    function initDisqus() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "guancunlin" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    };
+    setTimeout(() => {
+        initDisqus();
+    }, 3000);
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</article>
+
+
+
+<template x-if="['localhost', '127.0.0.1'].indexOf(window.location.hostname) == -1">
+  <article>
+    <script
+      src="https://utteranc.es/client.js"
+      repo="GuanCun/guancun.github.io"
+      issue-term="og:title"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </article>
+</template>
+
+
+
+
+
+
+  </section>
+  
+</div>
+
+
+            
+            <footer class="flex justify-between items-center gap-2 px-4 py-12">
+            
+              <div>
+  
+  <p>
+    © 2024 GuanCun 的博客
+  </p>
+  
+
+  
+  <p class="text-sm">
+    🌱
+    <span class="text-base-content/60">
+      Powered by <a class="hover:underline" href="https://gohugo.io/" target="_blank">Hugo</a> with theme
+      <a class="hover:underline" href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</span
+    >
+  </p>
+  
+</div>
+
+              <div
+  x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center h-[32px] px-2 gap-2 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+            </footer>
+          </div>
+        </div>
+        <div class="back">
+          <div class="container">
+            
+            <div class="dream-grid">
+  
+  
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">关于我</div>
+
+        <div class="prose dark:prose-invert">
+          <p>当前博客网站还在测试阶段</p>
+
+        </div>
+      </div>
+    </article>
+  </div>
+  
+  
+
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">社交链接</div>
+
+        <ul class="menu menu-horizontal flex-wrap w-full px-0 [&_ion-icon]:text-lg">
+  
+  <li>
+    <a href="mailto:linguancun@163.com" title="Email">
+      <ion-icon name="mail"></ion-icon>
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="https://github.com/GuanCun" target="_blank" title="GitHub">
+      <ion-icon name="logo-github"></ion-icon>
+    </a>
+  </li>
+  
+</ul>
+
+      </div>
+    </article>
+  </div>
+  
+
+  
+</div>
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+  window.lightTheme = "emerald"
+  window.darkTheme = "forest"
+</script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+
+  
+  
+  <script src="/js/grid.js"></script>
+
+
+
+
+<script src="/js/main.js"></script>
+
+    
+
+
+<script
+  src="https://cdn.jsdelivr.net/npm/luxon@1.26.0"
+  integrity="sha256-4sbTzmCCW9LGrIh5OsN8V5Pfdad1F1MwhLAOyXKnsE0="
+  crossorigin="anonymous"
+></script>
+<script>
+  format()
+
+  function format() {
+    document.querySelectorAll('span[data-format="luxon"]').forEach(el => {
+      const date = el.textContent
+
+      el.textContent = luxon.DateTime.fromISO(date, { locale: "zh" }).toFormat("yyyy年MM月dd日")
+    })
+  }
+</script>
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    <script type="module" src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>
