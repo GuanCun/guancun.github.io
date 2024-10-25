@@ -6,7 +6,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>入门笔记1：Supabase 本地开发与 Vue.js 集成完整指南 | GuanCun 的博客</title>
+    <title>前端视角初识 Supabase | GuanCun 的博客</title>
 
     
 
@@ -15,12 +15,16 @@
 
 
 <meta name="author" content="GuanCun" />
-<meta name="description" content="一、相关概念 BaaS（Backend as a Service）：后端即服务，提供如数据库、认证、文件存储等云端功能。Supabase 作为 BaaS 平台，默认集成了 PostgreSQL。 PostgreSQL：一种开源对象关系型数据库，支持复杂数据类型和操作，是 Supabase 的核心数据库引擎。 二、Supabase 介绍 Supabase 是一个开源的 BaaS 平台，提供类似 Firebase 的功能集，但具备更高的灵活性和可定制性。它可以在私有云或本地部署，核心功能通常包括数据库支持（如 PostgreSQL）、实时 API、身份验证、文件存储、边缘函数以及一个用于管理项目的仪表板。
-三、Supabase 的本地开发 要在本地设置 Supabase，你需要安装 Supabase CLI 和 Docker Desktop。
-1. 安装 Supabase CLI 在 macOS 上，通过 Homebrew 安装：
-brew install supabase/tap/supabase 2. 创建并启动本地 Supabase 为新的 Supabase 项目创建一个独立的文件夹：
-mkdir my-new-supabase-project &amp;amp;&amp;amp; cd my-new-supabase-project supabase init supabase start 启动成功后，访问 Studio URL 查看项目仪表盘。
-3. 停止本地 Supabase supabase stop 四、在 Supabase 仪表盘添加数据 进入仪表盘的 SQL 编辑器，粘贴以下 SQL 语句并运行：" />
+<meta name="description" content="引言 Supabase 是一个开源的 BaaS 平台，它可以在私有云或本地部署，核心功能通常包括数据库支持（如 PostgreSQL）、实时 API、身份验证、文件存储、边缘函数以及一个用于管理项目的仪表板。
+如何开始使用Supabase 为了让读者更好地理解如何使用 Supabase，以下是一些基本步骤：
+1. 创建 Supabase 项目：
+在 Supabase 官网注册账户并创建新项目。系统会自动为您生成 PostgreSQL 数据库和 API 密钥。 2. 访问 Supabase 控制台：
+登录后，您可以通过控制台管理数据库、设置身份验证、配置存储等。 3. 创建数据库表：
+在控制台中，您可以轻松创建和管理数据库表，配置字段类型及其属性。 4. 配置身份验证：
+在控制台中启用身份验证功能，选择所需的登录方式（如电子邮件或社交媒体）。 5. 上传文件：
+使用控制台中的存储功能上传和管理文件。 如何集成到前端项目 1. 初始化Supabase客户端 使用createClient()方法初始化Supabase客户端，这是与Supabase交互的入口点。示例代码如下：
+import { createClient } from &amp;#39;@supabase/supabase-js&amp;#39; // 替换为您项目的 supabaseUrl 和 API 密钥 const supabaseUrl = &amp;#39;https://your-project.supabase.co&amp;#39;; const supabaseKey = &amp;#39;your-public-anon-key&amp;#39;; const supabase = createClient(supabaseUrl, supabaseKey); 2. 数据库操作 查询数据:
+const { data, error } = await supabase." />
 
 
 <meta name="keywords" content="Tag1,Tag2">
@@ -32,13 +36,17 @@ mkdir my-new-supabase-project &amp;amp;&amp;amp; cd my-new-supabase-project supa
 
 <meta property="og:url" content="https://guancun.github.io/posts/%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01supabase-%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E4%B8%8E-vue.js-%E9%9B%86%E6%88%90%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/">
   <meta property="og:site_name" content="GuanCun 的博客">
-  <meta property="og:title" content="入门笔记1：Supabase 本地开发与 Vue.js 集成完整指南">
-  <meta property="og:description" content="一、相关概念 BaaS（Backend as a Service）：后端即服务，提供如数据库、认证、文件存储等云端功能。Supabase 作为 BaaS 平台，默认集成了 PostgreSQL。 PostgreSQL：一种开源对象关系型数据库，支持复杂数据类型和操作，是 Supabase 的核心数据库引擎。 二、Supabase 介绍 Supabase 是一个开源的 BaaS 平台，提供类似 Firebase 的功能集，但具备更高的灵活性和可定制性。它可以在私有云或本地部署，核心功能通常包括数据库支持（如 PostgreSQL）、实时 API、身份验证、文件存储、边缘函数以及一个用于管理项目的仪表板。
-三、Supabase 的本地开发 要在本地设置 Supabase，你需要安装 Supabase CLI 和 Docker Desktop。
-1. 安装 Supabase CLI 在 macOS 上，通过 Homebrew 安装：
-brew install supabase/tap/supabase 2. 创建并启动本地 Supabase 为新的 Supabase 项目创建一个独立的文件夹：
-mkdir my-new-supabase-project &amp;&amp; cd my-new-supabase-project supabase init supabase start 启动成功后，访问 Studio URL 查看项目仪表盘。
-3. 停止本地 Supabase supabase stop 四、在 Supabase 仪表盘添加数据 进入仪表盘的 SQL 编辑器，粘贴以下 SQL 语句并运行：">
+  <meta property="og:title" content="前端视角初识 Supabase">
+  <meta property="og:description" content="引言 Supabase 是一个开源的 BaaS 平台，它可以在私有云或本地部署，核心功能通常包括数据库支持（如 PostgreSQL）、实时 API、身份验证、文件存储、边缘函数以及一个用于管理项目的仪表板。
+如何开始使用Supabase 为了让读者更好地理解如何使用 Supabase，以下是一些基本步骤：
+1. 创建 Supabase 项目：
+在 Supabase 官网注册账户并创建新项目。系统会自动为您生成 PostgreSQL 数据库和 API 密钥。 2. 访问 Supabase 控制台：
+登录后，您可以通过控制台管理数据库、设置身份验证、配置存储等。 3. 创建数据库表：
+在控制台中，您可以轻松创建和管理数据库表，配置字段类型及其属性。 4. 配置身份验证：
+在控制台中启用身份验证功能，选择所需的登录方式（如电子邮件或社交媒体）。 5. 上传文件：
+使用控制台中的存储功能上传和管理文件。 如何集成到前端项目 1. 初始化Supabase客户端 使用createClient()方法初始化Supabase客户端，这是与Supabase交互的入口点。示例代码如下：
+import { createClient } from &#39;@supabase/supabase-js&#39; // 替换为您项目的 supabaseUrl 和 API 密钥 const supabaseUrl = &#39;https://your-project.supabase.co&#39;; const supabaseKey = &#39;your-public-anon-key&#39;; const supabase = createClient(supabaseUrl, supabaseKey); 2. 数据库操作 查询数据:
+const { data, error } = await supabase.">
   <meta property="og:locale" content="zh_Hans">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -46,18 +54,24 @@ mkdir my-new-supabase-project &amp;&amp; cd my-new-supabase-project supabase ini
     <meta property="article:modified_time" content="2024-10-22T14:26:14+08:00">
     <meta property="article:tag" content="Tag1">
     <meta property="article:tag" content="Tag2">
+    <meta property="og:image" content="https://guancun.github.io/posts/%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01supabase-%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E4%B8%8E-vue.js-%E9%9B%86%E6%88%90%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/cover.jpg">
 
 
 
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="入门笔记1：Supabase 本地开发与 Vue.js 集成完整指南">
-  <meta name="twitter:description" content="一、相关概念 BaaS（Backend as a Service）：后端即服务，提供如数据库、认证、文件存储等云端功能。Supabase 作为 BaaS 平台，默认集成了 PostgreSQL。 PostgreSQL：一种开源对象关系型数据库，支持复杂数据类型和操作，是 Supabase 的核心数据库引擎。 二、Supabase 介绍 Supabase 是一个开源的 BaaS 平台，提供类似 Firebase 的功能集，但具备更高的灵活性和可定制性。它可以在私有云或本地部署，核心功能通常包括数据库支持（如 PostgreSQL）、实时 API、身份验证、文件存储、边缘函数以及一个用于管理项目的仪表板。
-三、Supabase 的本地开发 要在本地设置 Supabase，你需要安装 Supabase CLI 和 Docker Desktop。
-1. 安装 Supabase CLI 在 macOS 上，通过 Homebrew 安装：
-brew install supabase/tap/supabase 2. 创建并启动本地 Supabase 为新的 Supabase 项目创建一个独立的文件夹：
-mkdir my-new-supabase-project &amp;&amp; cd my-new-supabase-project supabase init supabase start 启动成功后，访问 Studio URL 查看项目仪表盘。
-3. 停止本地 Supabase supabase stop 四、在 Supabase 仪表盘添加数据 进入仪表盘的 SQL 编辑器，粘贴以下 SQL 语句并运行：">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://guancun.github.io/posts/%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01supabase-%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E4%B8%8E-vue.js-%E9%9B%86%E6%88%90%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/cover.jpg">
+  <meta name="twitter:title" content="前端视角初识 Supabase">
+  <meta name="twitter:description" content="引言 Supabase 是一个开源的 BaaS 平台，它可以在私有云或本地部署，核心功能通常包括数据库支持（如 PostgreSQL）、实时 API、身份验证、文件存储、边缘函数以及一个用于管理项目的仪表板。
+如何开始使用Supabase 为了让读者更好地理解如何使用 Supabase，以下是一些基本步骤：
+1. 创建 Supabase 项目：
+在 Supabase 官网注册账户并创建新项目。系统会自动为您生成 PostgreSQL 数据库和 API 密钥。 2. 访问 Supabase 控制台：
+登录后，您可以通过控制台管理数据库、设置身份验证、配置存储等。 3. 创建数据库表：
+在控制台中，您可以轻松创建和管理数据库表，配置字段类型及其属性。 4. 配置身份验证：
+在控制台中启用身份验证功能，选择所需的登录方式（如电子邮件或社交媒体）。 5. 上传文件：
+使用控制台中的存储功能上传和管理文件。 如何集成到前端项目 1. 初始化Supabase客户端 使用createClient()方法初始化Supabase客户端，这是与Supabase交互的入口点。示例代码如下：
+import { createClient } from &#39;@supabase/supabase-js&#39; // 替换为您项目的 supabaseUrl 和 API 密钥 const supabaseUrl = &#39;https://your-project.supabase.co&#39;; const supabaseKey = &#39;your-public-anon-key&#39;; const supabase = createClient(supabaseUrl, supabaseKey); 2. 数据库操作 查询数据:
+const { data, error } = await supabase.">
 
 
 
@@ -340,17 +354,17 @@ mkdir my-new-supabase-project &amp;&amp; cd my-new-supabase-project supabase ini
     <div class="absolute right-0 lg:w-36 xl:w-48 hidden lg:block" :style="{ height }">
       <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#引言">引言</a></li>
+    <li><a href="#如何开始使用supabase">如何开始使用Supabase</a></li>
+    <li><a href="#如何集成到前端项目">如何集成到前端项目</a>
       <ul>
-        <li><a href="#一相关概念">一、相关概念</a></li>
-        <li><a href="#二supabase-介绍">二、Supabase 介绍</a></li>
-        <li><a href="#三supabase-的本地开发">三、Supabase 的本地开发</a></li>
-        <li><a href="#四在-supabase-仪表盘添加数据">四、在 Supabase 仪表盘添加数据</a></li>
-        <li><a href="#五在-vuejs-中使用-supabase">五、在 Vue.js 中使用 Supabase</a></li>
-        <li><a href="#六部署方式">六、部署方式</a></li>
-        <li><a href="#七参考链接">七、参考链接</a></li>
+        <li><a href="#1-初始化supabase客户端">1. 初始化Supabase客户端</a></li>
+        <li><a href="#2-数据库操作">2. 数据库操作</a></li>
+        <li><a href="#3-用户身份验证">3. 用户身份验证</a></li>
+        <li><a href="#4-文件存储">4. 文件存储</a></li>
       </ul>
     </li>
+    <li><a href="#总结">总结</a></li>
   </ul>
 </nav>
 
@@ -361,26 +375,31 @@ mkdir my-new-supabase-project &amp;&amp; cd my-new-supabase-project supabase ini
     
     <article class="mx-auto prose prose-quoteless dark:prose-invert" id="dream-single-post-main" itemscope itemtype="http://schema.org/Article">
       
-  <meta itemprop="name" content="入门笔记1：Supabase 本地开发与 Vue.js 集成完整指南">
-  <meta itemprop="description" content="一、相关概念 BaaS（Backend as a Service）：后端即服务，提供如数据库、认证、文件存储等云端功能。Supabase 作为 BaaS 平台，默认集成了 PostgreSQL。 PostgreSQL：一种开源对象关系型数据库，支持复杂数据类型和操作，是 Supabase 的核心数据库引擎。 二、Supabase 介绍 Supabase 是一个开源的 BaaS 平台，提供类似 Firebase 的功能集，但具备更高的灵活性和可定制性。它可以在私有云或本地部署，核心功能通常包括数据库支持（如 PostgreSQL）、实时 API、身份验证、文件存储、边缘函数以及一个用于管理项目的仪表板。
-三、Supabase 的本地开发 要在本地设置 Supabase，你需要安装 Supabase CLI 和 Docker Desktop。
-1. 安装 Supabase CLI 在 macOS 上，通过 Homebrew 安装：
-brew install supabase/tap/supabase 2. 创建并启动本地 Supabase 为新的 Supabase 项目创建一个独立的文件夹：
-mkdir my-new-supabase-project &amp;&amp; cd my-new-supabase-project supabase init supabase start 启动成功后，访问 Studio URL 查看项目仪表盘。
-3. 停止本地 Supabase supabase stop 四、在 Supabase 仪表盘添加数据 进入仪表盘的 SQL 编辑器，粘贴以下 SQL 语句并运行：">
+  <meta itemprop="name" content="前端视角初识 Supabase">
+  <meta itemprop="description" content="引言 Supabase 是一个开源的 BaaS 平台，它可以在私有云或本地部署，核心功能通常包括数据库支持（如 PostgreSQL）、实时 API、身份验证、文件存储、边缘函数以及一个用于管理项目的仪表板。
+如何开始使用Supabase 为了让读者更好地理解如何使用 Supabase，以下是一些基本步骤：
+1. 创建 Supabase 项目：
+在 Supabase 官网注册账户并创建新项目。系统会自动为您生成 PostgreSQL 数据库和 API 密钥。 2. 访问 Supabase 控制台：
+登录后，您可以通过控制台管理数据库、设置身份验证、配置存储等。 3. 创建数据库表：
+在控制台中，您可以轻松创建和管理数据库表，配置字段类型及其属性。 4. 配置身份验证：
+在控制台中启用身份验证功能，选择所需的登录方式（如电子邮件或社交媒体）。 5. 上传文件：
+使用控制台中的存储功能上传和管理文件。 如何集成到前端项目 1. 初始化Supabase客户端 使用createClient()方法初始化Supabase客户端，这是与Supabase交互的入口点。示例代码如下：
+import { createClient } from &#39;@supabase/supabase-js&#39; // 替换为您项目的 supabaseUrl 和 API 密钥 const supabaseUrl = &#39;https://your-project.supabase.co&#39;; const supabaseKey = &#39;your-public-anon-key&#39;; const supabase = createClient(supabaseUrl, supabaseKey); 2. 数据库操作 查询数据:
+const { data, error } = await supabase.">
   <meta itemprop="datePublished" content="2024-10-22T14:26:14+08:00">
   <meta itemprop="dateModified" content="2024-10-22T14:26:14+08:00">
-  <meta itemprop="wordCount" content="269">
+  <meta itemprop="wordCount" content="134">
+  <meta itemprop="image" content="https://guancun.github.io/posts/%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01supabase-%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E4%B8%8E-vue.js-%E9%9B%86%E6%88%90%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/cover.jpg">
   <meta itemprop="keywords" content="Tag1,Tag2">
 
       <header>
-        <h1 itemprop="headline">入门笔记1：Supabase 本地开发与 Vue.js 集成完整指南</h1>
+        <h1 itemprop="headline">前端视角初识 Supabase</h1>
         <p class="text-sm">
           
             <span data-format="luxon">2024-10-22T14:26:14&#43;08:00</span>
           
 
-          | <span>2分钟阅读</span>
+          | <span>1分钟阅读</span>
 
           
           | <span>更新于
@@ -413,7 +432,7 @@ mkdir my-new-supabase-project &amp;&amp; cd my-new-supabase-project supabase ini
   
   
     <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
-      href="https://x.com/intent/post?text=%e5%85%a5%e9%97%a8%e7%ac%94%e8%ae%b01%ef%bc%9aSupabase%20%e6%9c%ac%e5%9c%b0%e5%bc%80%e5%8f%91%e4%b8%8e%20Vue.js%20%e9%9b%86%e6%88%90%e5%ae%8c%e6%95%b4%e6%8c%87%e5%8d%97&amp;url=https://guancun.github.io/posts/%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01supabase-%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E4%B8%8E-vue.js-%E9%9B%86%E6%88%90%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/" target="_blank" rel="noopener noreferrer"
+      href="https://x.com/intent/post?text=%e5%89%8d%e7%ab%af%e8%a7%86%e8%a7%92%e5%88%9d%e8%af%86%20Supabase&amp;url=https://guancun.github.io/posts/%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01supabase-%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E4%B8%8E-vue.js-%E9%9B%86%E6%88%90%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/" target="_blank" rel="noopener noreferrer"
       title="Share on X">
       <ion-icon class="group-hover:text-primary-content" name="logo-x"></ion-icon>
     </a>
@@ -425,7 +444,7 @@ mkdir my-new-supabase-project &amp;&amp; cd my-new-supabase-project supabase ini
     </a>
   
     <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
-      href="https://wa.me/?text=%e5%85%a5%e9%97%a8%e7%ac%94%e8%ae%b01%ef%bc%9aSupabase%20%e6%9c%ac%e5%9c%b0%e5%bc%80%e5%8f%91%e4%b8%8e%20Vue.js%20%e9%9b%86%e6%88%90%e5%ae%8c%e6%95%b4%e6%8c%87%e5%8d%97%20https://guancun.github.io/posts/%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01supabase-%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E4%B8%8E-vue.js-%E9%9B%86%E6%88%90%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/" target="_blank" rel="noopener noreferrer"
+      href="https://wa.me/?text=%e5%89%8d%e7%ab%af%e8%a7%86%e8%a7%92%e5%88%9d%e8%af%86%20Supabase%20https://guancun.github.io/posts/%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01supabase-%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E4%B8%8E-vue.js-%E9%9B%86%E6%88%90%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/" target="_blank" rel="noopener noreferrer"
       title="Share on WhatsApp">
       <ion-icon class="group-hover:text-primary-content" name="logo-whatsapp"></ion-icon>
     </a>
@@ -439,107 +458,75 @@ mkdir my-new-supabase-project &amp;&amp; cd my-new-supabase-project supabase ini
       </header>
 
       
-      <img src="/img/jonny-gios-XWSPqY6CCcQ-unsplash.jpg" alt="入门笔记1：Supabase 本地开发与 Vue.js 集成完整指南" />
+      <img src="cover.jpg" alt="前端视角初识 Supabase" />
       
 
-      <h3 id="一相关概念">一、相关概念</h3>
+      <h2 id="引言">引言</h2>
+<p>Supabase 是一个开源的 BaaS 平台，它可以在私有云或本地部署，核心功能通常包括<strong>数据库支持（如 PostgreSQL）、实时 API、身份验证、文件存储、边缘函数以及一个用于管理项目的仪表板</strong>。</p>
+<h2 id="如何开始使用supabase">如何开始使用Supabase</h2>
+<p>为了让读者更好地理解如何使用 Supabase，以下是一些基本步骤：</p>
+<p><strong>1.  创建 Supabase 项目</strong>：</p>
 <ul>
-<li><strong>BaaS（Backend as a Service）</strong>：后端即服务，提供如数据库、认证、文件存储等云端功能。Supabase 作为 BaaS 平台，默认集成了 PostgreSQL。</li>
-<li><strong>PostgreSQL</strong>：一种开源对象关系型数据库，支持复杂数据类型和操作，是 Supabase 的核心数据库引擎。</li>
+<li>在 Supabase 官网注册账户并创建新项目。系统会自动为您生成 PostgreSQL 数据库和 API 密钥。</li>
 </ul>
-<h3 id="二supabase-介绍">二、Supabase 介绍</h3>
-<p>Supabase 是一个开源的 BaaS 平台，提供类似 Firebase 的功能集，但具备更高的灵活性和可定制性。它可以在私有云或本地部署，核心功能通常包括<strong>数据库支持（如 PostgreSQL）、实时 API、身份验证、文件存储、边缘函数以及一个用于管理项目的仪表板</strong>。</p>
-<h3 id="三supabase-的本地开发">三、Supabase 的本地开发</h3>
-<p>要在本地设置 Supabase，你需要安装 Supabase CLI 和 Docker Desktop。</p>
-<h4 id="1-安装-supabase-cli">1. 安装 Supabase CLI</h4>
-<p>在 macOS 上，通过 Homebrew 安装：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">brew install supabase/tap/supabase
-</span></span></code></pre></div><h4 id="2-创建并启动本地-supabase">2. 创建并启动本地 Supabase</h4>
-<p>为新的 Supabase 项目创建一个独立的文件夹：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir my-new-supabase-project <span class="o">&amp;&amp;</span> <span class="nb">cd</span> my-new-supabase-project
-</span></span><span class="line"><span class="cl">supabase init
-</span></span><span class="line"><span class="cl">supabase start
-</span></span></code></pre></div><img src="img1.png" alt="描述"><p>启动成功后，访问 <a href="http://127.0.0.1:54323">Studio URL</a> 查看项目仪表盘。</p>
-<h4 id="3-停止本地-supabase">3. 停止本地 Supabase</h4>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">supabase stop
-</span></span></code></pre></div><h3 id="四在-supabase-仪表盘添加数据">四、在 Supabase 仪表盘添加数据</h3>
-<ol>
-<li>
-<p>进入仪表盘的 SQL 编辑器，粘贴以下 SQL 语句并运行：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- 创建表
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">countries</span><span class="w"> </span><span class="p">(</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">id</span><span class="w"> </span><span class="nb">bigint</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="k">generated</span><span class="w"> </span><span class="n">always</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="k">identity</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">name</span><span class="w"> </span><span class="nb">text</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 插入示例数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">countries</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="s1">&#39;Canada&#39;</span><span class="p">),</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="s1">&#39;United States&#39;</span><span class="p">),</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="s1">&#39;Mexico&#39;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 启用行级安全
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">countries</span><span class="w"> </span><span class="n">enable</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">level</span><span class="w"> </span><span class="k">security</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></div></li>
-<li>
-<p>添加 RLS 策略，允许匿名用户读取数据：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">create</span><span class="w"> </span><span class="n">policy</span><span class="w"> </span><span class="s2">&#34;public can read countries&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">on</span><span class="w"> </span><span class="k">public</span><span class="p">.</span><span class="n">countries</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">for</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">anon</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">using</span><span class="w"> </span><span class="p">(</span><span class="k">true</span><span class="p">);</span><span class="w">
-</span></span></span></code></pre></div></li>
-</ol>
-<h3 id="五在-vuejs-中使用-supabase">五、在 Vue.js 中使用 Supabase</h3>
-<h4 id="1-创建-vue-项目">1. 创建 Vue 项目</h4>
-<p>使用 Vite 创建一个新的 Vue 项目：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm create vite@latest
-</span></span></code></pre></div><h4 id="2-安装-supabase-客户端库">2. 安装 Supabase 客户端库</h4>
-<p>在 Vue 项目根目录安装 Supabase 客户端库：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install @supabase/supabase-js
-</span></span></code></pre></div><h4 id="3-配置-supabase-客户端">3. 配置 Supabase 客户端</h4>
-<p>在 <code>/src/lib</code> 目录中创建 <code>supabaseClient.js</code> 文件，初始化 Supabase 客户端：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">createClient</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@supabase/supabase-js&#39;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">supabase</span> <span class="o">=</span> <span class="nx">createClient</span><span class="p">(</span><span class="s1">&#39;&lt;your-api-url&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;your-anon-key&gt;&#39;</span><span class="p">)</span>
-</span></span></code></pre></div><blockquote>
-<p>你可以在 <code>supabase start</code> 启动后的日志中找到 API URL 和 anon key。</p>
-</blockquote>
-<h4 id="4-获取数据并显示在-vue-应用中">4. 获取数据并显示在 Vue 应用中</h4>
-<p>修改 <code>App.vue</code> 文件，从 Supabase 数据库获取数据并显示：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vue" data-lang="vue"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">setup</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">ref</span><span class="p">,</span> <span class="nx">onMounted</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">supabase</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./lib/supabaseClient&#39;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">countries</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">([])</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">async</span> <span class="kd">function</span> <span class="nx">getCountries</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">{</span> <span class="nx">data</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">supabase</span><span class="p">.</span><span class="nx">from</span><span class="p">(</span><span class="s1">&#39;countries&#39;</span><span class="p">).</span><span class="nx">select</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">countries</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">data</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">onMounted</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">getCountries</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">})</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">li</span> <span class="nt">v-for</span><span class="o">=</span><span class="s">&#34;country in countries&#34; :key=&#34;country.id&#34;</span><span class="p">&gt;{{</span> <span class="na">country.name</span> <span class="p">}}&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-</span></span></code></pre></div><p>通过上述步骤，你将能够在前端界面上看到从 Supabase 数据库获取的国家列表。</p>
-<h3 id="六部署方式">六、部署方式</h3>
-<ol>
-<li><a href="https://supabase.com/dashboard">官方托管平台</a></li>
-<li><a href="https://supabase.com/docs/guides/hosting/overview">自托管</a></li>
-<li><a href="https://supabase.com/docs/guides/local-development">本地开发</a></li>
-</ol>
-<h3 id="七参考链接">七、参考链接</h3>
+<p><strong>2. 访问 Supabase 控制台</strong>：</p>
 <ul>
-<li><a href="https://supabase.com/docs/guides/cli/getting-started?queryGroups=platform&amp;platform=macos#installing-the-supabase-cli">Supabase CLI 安装指南</a></li>
-<li><a href="https://supabase.com/docs/guides/getting-started/quickstarts/vue">Vue 与 Supabase 集成指南</a></li>
-<li><a href="https://supabase.com/docs/reference/cli/introduction">Supabase CLI 命令参考</a></li>
+<li>登录后，您可以通过控制台管理数据库、设置身份验证、配置存储等。</li>
 </ul>
+<p><strong>3. 创建数据库表</strong>：</p>
+<ul>
+<li>在控制台中，您可以轻松创建和管理数据库表，配置字段类型及其属性。</li>
+</ul>
+<p><strong>4. 配置身份验证</strong>：</p>
+<ul>
+<li>在控制台中启用身份验证功能，选择所需的登录方式（如电子邮件或社交媒体）。</li>
+</ul>
+<p><strong>5. 上传文件</strong>：</p>
+<ul>
+<li>使用控制台中的存储功能上传和管理文件。</li>
+</ul>
+<h2 id="如何集成到前端项目">如何集成到前端项目</h2>
+<h3 id="1-初始化supabase客户端">1. 初始化Supabase客户端</h3>
+<p>使用<code>createClient()</code>方法初始化Supabase客户端，这是与Supabase交互的入口点。示例代码如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">createClient</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@supabase/supabase-js&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 替换为您项目的 supabaseUrl 和 API 密钥
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">supabaseUrl</span> <span class="o">=</span> <span class="s1">&#39;https://your-project.supabase.co&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">supabaseKey</span> <span class="o">=</span> <span class="s1">&#39;your-public-anon-key&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">supabase</span> <span class="o">=</span> <span class="nx">createClient</span><span class="p">(</span><span class="nx">supabaseUrl</span><span class="p">,</span> <span class="nx">supabaseKey</span><span class="p">);</span>
+</span></span></code></pre></div><h3 id="2-数据库操作">2. 数据库操作</h3>
+<ul>
+<li>
+<p><strong>查询数据</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">{</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">error</span> <span class="p">}</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">supabase</span><span class="p">.</span><span class="nx">from</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">).</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">);</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>插入数据</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">{</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">error</span> <span class="p">}</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">supabase</span><span class="p">.</span><span class="nx">from</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">).</span><span class="nx">insert</span><span class="p">([{</span> <span class="nx">column_name</span><span class="o">:</span> <span class="s1">&#39;value&#39;</span> <span class="p">}]);</span>
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="3-用户身份验证">3. 用户身份验证</h3>
+<ul>
+<li>
+<p><strong>注册用户</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">{</span> <span class="nx">user</span><span class="p">,</span> <span class="nx">session</span><span class="p">,</span> <span class="nx">error</span> <span class="p">}</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">supabase</span><span class="p">.</span><span class="nx">auth</span><span class="p">.</span><span class="nx">signUp</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">email</span><span class="o">:</span> <span class="s1">&#39;example@example.com&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">password</span><span class="o">:</span> <span class="s1">&#39;password123&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>登录用户</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">{</span> <span class="nx">user</span><span class="p">,</span> <span class="nx">session</span><span class="p">,</span> <span class="nx">error</span> <span class="p">}</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">supabase</span><span class="p">.</span><span class="nx">auth</span><span class="p">.</span><span class="nx">signIn</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">email</span><span class="o">:</span> <span class="s1">&#39;example@example.com&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">password</span><span class="o">:</span> <span class="s1">&#39;password123&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="4-文件存储">4. 文件存储</h3>
+<p>使用Supabase的存储服务上传文件，例如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">{</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">error</span> <span class="p">}</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">supabase</span><span class="p">.</span><span class="nx">storage</span><span class="p">.</span><span class="nx">from</span><span class="p">(</span><span class="s1">&#39;bucket_name&#39;</span><span class="p">).</span><span class="nx">upload</span><span class="p">(</span><span class="s1">&#39;path/to/file&#39;</span><span class="p">,</span> <span class="nx">file</span><span class="p">);</span>
+</span></span></code></pre></div><h2 id="总结">总结</h2>
+<p>Supabase 提供了一整套便捷的工具，使开发者能够专注于前端开发，而无需过多关注后端架构。</p>
 
 
       
@@ -567,7 +554,7 @@ mkdir my-new-supabase-project &amp;&amp; cd my-new-supabase-project supabase ini
 <script>
     window.disqus_config = function () {
         this.page.identifier = '\/posts\/%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01supabase-%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E4%B8%8E-vue.js-%E9%9B%86%E6%88%90%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97\/';
-        this.page.title = '入门笔记1：Supabase 本地开发与 Vue.js 集成完整指南';
+        this.page.title = '前端视角初识 Supabase';
         this.page.url = 'https:\/\/guancun.github.io\/posts\/%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01supabase-%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E4%B8%8E-vue.js-%E9%9B%86%E6%88%90%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97\/';
     };
     function initDisqus() {
