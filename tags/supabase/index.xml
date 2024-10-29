@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>GuanCun 的博客</title>
-    <link>https://guancun.github.io/</link>
-    <description>Recent content on GuanCun 的博客</description>
+    <title>Supabase on GuanCun 的博客</title>
+    <link>https://guancun.github.io/tags/supabase/</link>
+    <description>Recent content in Supabase on GuanCun 的博客</description>
     <generator>Hugo</generator>
     <language>zh-Hans</language>
     <lastBuildDate>Tue, 22 Oct 2024 14:26:14 +0800</lastBuildDate>
-    <atom:link href="https://guancun.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://guancun.github.io/tags/supabase/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>前端视角初识 Supabase</title>
       <link>https://guancun.github.io/posts/%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01supabase-%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E4%B8%8E-vue.js-%E9%9B%86%E6%88%90%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/</link>

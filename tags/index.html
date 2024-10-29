@@ -295,15 +295,11 @@
 
   <div class="md:basis-[200px] lg:basis-[300px] p-4 prose dark:prose-invert">
     <h1 class="text-2xl">所有标签</h1>
-    <p class="text-sm">2标签</p>
+    <p class="text-sm">1标签</p>
     <div class="flex flex-wrap gap-4 mt-6">
       
-      <a href="/tags/tag1/" class="badge h-6 no-underline hover:badge-primary">
-        Tag1
-      </a>
-      
-      <a href="/tags/tag2/" class="badge h-6 no-underline hover:badge-primary">
-        Tag2
+      <a href="/tags/supabase/" class="badge h-6 no-underline hover:badge-primary">
+        Supabase
       </a>
       
     </div>
@@ -325,7 +321,7 @@
     
       
       <picture>
-        <source srcset="/posts/%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01supabase-%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E4%B8%8E-vue.js-%E9%9B%86%E6%88%90%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/cover_hu5459c0360c2b0cb7a147d2df0eb350ca_2689384_5727x3823_resize_q75_h2_box.webp" type="image/webp" />
+        <source srcset="/posts/%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01supabase-%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E4%B8%8E-vue.js-%E9%9B%86%E6%88%90%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/cover_hu59541580f9c4ef19e86bbc0ade67d9c0_2000166_5727x3823_resize_q75_h2_box.webp" type="image/webp" />
         <img src="/posts/%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01supabase-%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E4%B8%8E-vue.js-%E9%9B%86%E6%88%90%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/cover.jpg" alt="cover.jpg" />
       </picture>
     
@@ -342,16 +338,16 @@
     
     </p>
 
-    引言 Supabase 是一个开源的 BaaS 平台，它可以在私有云或本地部署，核心功能通常包括数据库支持（如 PostgreSQL）、实时 API、身份验证、文件存储、边缘函数以及一个用于管理项目的仪表板。
-如何开始使用Supabase 为了让读者更好地理解如何使用 Supabase，以下是一些基本步骤：
+    引言 Supabase 是一个开源的 BaaS 平台，它集成了多种后端服务，方便开发者快速搭建应用。核心功能通常包括数据库支持（如 PostgreSQL）、实时 API、身份验证、文件存储、边缘函数以及一个用于管理项目的仪表板。
+你可以选择官方托管平台或本地进行部署，本文将以官方托管平台为例，介绍如何在 Vue.js 项目中集成 Supabase。
+如何开始使用 Supabase 以下是一些基本步骤：
 1. 创建 Supabase 项目：
-在 Supabase 官网注册账户并创建新项目。系统会自动为您生成 PostgreSQL 数据库和 API 密钥。 2. 访问 Supabase 控制台：
-登录后，您可以通过控制台管理数据库、设置身份验证、配置存储等。 3. 创建数据库表：
-在控制台中，您可以轻松创建和管理数据库表，配置字段类型及其属性。 4. 配置身份验证：
+在 Supabase 官方托管平台 注册账户并创建新项目。系统会自动为你生成 PostgreSQL 数据库和 API 密钥。 2. 访问 Supabase 控制台：
+登录后，你可以通过控制台管理数据库、设置身份验证、配置存储等。 3. 创建数据库表：
+在控制台中，你可以轻松创建和管理数据库表，配置字段类型及其属性。 4. 配置身份验证：
 在控制台中启用身份验证功能，选择所需的登录方式（如电子邮件或社交媒体）。 5. 上传文件：
 使用控制台中的存储功能上传和管理文件。 如何集成到前端项目 1. 初始化Supabase客户端 使用createClient()方法初始化Supabase客户端，这是与Supabase交互的入口点。示例代码如下：
-import { createClient } from &#39;@supabase/supabase-js&#39; // 替换为您项目的 supabaseUrl 和 API 密钥 const supabaseUrl = &#39;https://your-project.supabase.co&#39;; const supabaseKey = &#39;your-public-anon-key&#39;; const supabase = createClient(supabaseUrl, supabaseKey); 2. 数据库操作 查询数据:
-const { data, error } = await supabase.
+import { createClient } from &#39;@supabase/supabase-js&#39; // 替换为你项目的 supabaseUrl 和 API 密钥 const supabaseUrl = &#39;https://your-project.supabase.co&#39;; const supabaseKey = &#39;your-public-anon-key&#39;; const supabase = createClient(supabaseUrl, supabaseKey); 2. 数据库操作 查询数据:
 
     <div class="card-actions justify-between items-center mt-4">
       <div class="flex items-center">
@@ -369,7 +365,7 @@ const { data, error } = await supabase.
 
       <div class="flex items-center">
         <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>1分钟阅读</span>
+        <span>2分钟阅读</span>
       </div>
     </div>
   </div>
