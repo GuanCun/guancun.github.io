@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tag2 on GuanCun 的博客</title>
-    <link>https://guancun.github.io/tags/tag2/</link>
+    <link>http://localhost:1313/tags/tag2/</link>
     <description>Recent content in Tag2 on GuanCun 的博客</description>
     <generator>Hugo</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Tue, 22 Oct 2024 14:26:14 +0800</lastBuildDate>
-    <atom:link href="https://guancun.github.io/tags/tag2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Oct 2024 17:18:53 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/tag2/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>前端视角初识 Supabase</title>
-      <link>https://guancun.github.io/posts/%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01supabase-%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E4%B8%8E-vue.js-%E9%9B%86%E6%88%90%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/</link>
-      <pubDate>Tue, 22 Oct 2024 14:26:14 +0800</pubDate>
-      <guid>https://guancun.github.io/posts/%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01supabase-%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E4%B8%8E-vue.js-%E9%9B%86%E6%88%90%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/</guid>
-      <description>引言 Supabase 是一个开源的 BaaS 平台，它可以在私有云或本地部署，核心功能通常包括数据库支持（如 PostgreSQL）、实时 API、身份验证、文件存储、边缘函数以及一个用于管理项目的仪表板。&#xA;如何开始使用Supabase 为了让读者更好地理解如何使用 Supabase，以下是一些基本步骤：&#xA;1. 创建 Supabase 项目：&#xA;在 Supabase 官网注册账户并创建新项目。系统会自动为您生成 PostgreSQL 数据库和 API 密钥。 2. 访问 Supabase 控制台：&#xA;登录后，您可以通过控制台管理数据库、设置身份验证、配置存储等。 3. 创建数据库表：&#xA;在控制台中，您可以轻松创建和管理数据库表，配置字段类型及其属性。 4. 配置身份验证：&#xA;在控制台中启用身份验证功能，选择所需的登录方式（如电子邮件或社交媒体）。 5. 上传文件：&#xA;使用控制台中的存储功能上传和管理文件。 如何集成到前端项目 1. 初始化Supabase客户端 使用createClient()方法初始化Supabase客户端，这是与Supabase交互的入口点。示例代码如下：&#xA;import { createClient } from &amp;#39;@supabase/supabase-js&amp;#39; // 替换为您项目的 supabaseUrl 和 API 密钥 const supabaseUrl = &amp;#39;https://your-project.supabase.co&amp;#39;; const supabaseKey = &amp;#39;your-public-anon-key&amp;#39;; const supabase = createClient(supabaseUrl, supabaseKey); 2. 数据库操作 查询数据:&#xA;const { data, error } = await supabase.</description>
+      <title>CPU 过载与温度监控：我的 MacBook 使用体验</title>
+      <link>http://localhost:1313/posts/cpu-%E8%BF%87%E8%BD%BD%E4%B8%8E%E6%B8%A9%E5%BA%A6%E7%9B%91%E6%8E%A7%E6%88%91%E7%9A%84-macbook-%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/</link>
+      <pubDate>Wed, 30 Oct 2024 17:18:53 +0800</pubDate>
+      <guid>http://localhost:1313/posts/cpu-%E8%BF%87%E8%BD%BD%E4%B8%8E%E6%B8%A9%E5%BA%A6%E7%9B%91%E6%8E%A7%E6%88%91%E7%9A%84-macbook-%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/</guid>
+      <description>今天偶然发现我的 MacBook 变得非常烫手，这是后台过量进程消耗系统资源的表现，而我当前并未运行大量内存或高功耗的应用程序。&#xA;通过「活动监视器」，我追查到 VSCode 的 Code Helper 进程，它占用单个 CPU 竟然达到惊人的 100%。并且存在多个类似的进程。&#xA;![[Pasted image 20241030155055.png]]&#xA;由于我通常使用外接设备而非直接接触到 MacBook，这让我对笔记本的温度异常难以察觉，对系统运行情况一无所知。&#xA;这件事促使我开始关注系统的监控，通过 perplexity 搜索，我找到两款推荐的监控工具：&#xA;State：它能够实时在你的菜单栏上显示Mac电脑的CPU、内存、硬盘、温度、风扇、网络等信息。 RunCat：一个通过有趣的 GIF 动画在菜单栏显示 CPU 负载的应用。 两款 APP 的使用体验对我来说差异不大，但是我还是选了更抽象的 RunCat，其直观简单的逻辑设计更符合我当前的需求。&#xA;![[Pasted image 20241030160538.png]]</description>
     </item>
   </channel>
 </rss>

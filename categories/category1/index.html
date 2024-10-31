@@ -3,14 +3,14 @@
   x-data
   :class="$store.darkMode.class()"
   :data-theme="$store.darkMode.theme()">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Category1 | GuanCun 的博客</title>
 
     
 
-<link rel="canonical" href="https://guancun.github.io/categories/category1/" />
+<link rel="canonical" href="http://localhost:1313/categories/category1/" />
 
 
 
@@ -22,7 +22,7 @@
 <meta name="generator" content="Hugo 0.128.2">
 
 
-<meta property="og:url" content="https://guancun.github.io/categories/category1/">
+<meta property="og:url" content="http://localhost:1313/categories/category1/">
   <meta property="og:site_name" content="GuanCun 的博客">
   <meta property="og:title" content="Category1">
   <meta property="og:description" content="林冠存的独立博客">
@@ -39,9 +39,7 @@
 
 
 
-  
-
-<link rel="stylesheet" href="/css/output.min.css" />
+<link rel="stylesheet" href="/css/output.css" />
 
 
 
@@ -80,7 +78,7 @@
       
       <div>
         
-        <a href="https://guancun.github.io/" class="text-lg font-semibold cursor-pointer">
+        <a href="http://localhost:1313/" class="text-lg font-semibold cursor-pointer">
           GuanCun 的博客
         </a>
         
@@ -292,15 +290,21 @@
 
   <div class="md:basis-[200px] lg:basis-[300px] p-4 prose dark:prose-invert">
     <h1 class="text-2xl">Category1</h1>
-    <p class="text-sm">1篇文章</p>
+    <p class="text-sm">0篇文章</p>
     <div class="flex flex-wrap gap-4 mt-6">
       
 
       
       
-      <span class="badge h-6 badge-primary">
-        Category1
-      </span>
+      <a href="/categories/%E6%8A%80%E6%9C%AF/" class="badge h-6 no-underline hover:badge-primary">
+        技术
+      </a>
+      
+      
+      
+      <a href="/categories/%E5%BC%80%E5%8F%91/" class="badge h-6 no-underline hover:badge-primary">
+        开发
+      </a>
       
       
     </div>
@@ -313,66 +317,6 @@
 
     
     <div class="dream-grid">
-    
-      <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
-        <a class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01supabase-%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E4%B8%8E-vue.js-%E9%9B%86%E6%88%90%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/">
-  
-  <figure>
-    
-    
-      
-      <picture>
-        <source srcset="/posts/%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01supabase-%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E4%B8%8E-vue.js-%E9%9B%86%E6%88%90%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/cover_hu5459c0360c2b0cb7a147d2df0eb350ca_2689384_5727x3823_resize_q75_h2_box.webp" type="image/webp" />
-        <img src="/posts/%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01supabase-%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E4%B8%8E-vue.js-%E9%9B%86%E6%88%90%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/cover.jpg" alt="cover.jpg" />
-      </picture>
-    
-    
-  </figure>
-  
-
-  <div class="card-body">
-    <h2 class="card-title">前端视角初识 Supabase</h2>
-
-    <p class="date text-base-content/60">
-    
-      <span data-format="luxon">2024-10-22T14:26:14&#43;08:00</span>
-    
-    </p>
-
-    引言 Supabase 是一个开源的 BaaS 平台，它可以在私有云或本地部署，核心功能通常包括数据库支持（如 PostgreSQL）、实时 API、身份验证、文件存储、边缘函数以及一个用于管理项目的仪表板。
-如何开始使用Supabase 为了让读者更好地理解如何使用 Supabase，以下是一些基本步骤：
-1. 创建 Supabase 项目：
-在 Supabase 官网注册账户并创建新项目。系统会自动为您生成 PostgreSQL 数据库和 API 密钥。 2. 访问 Supabase 控制台：
-登录后，您可以通过控制台管理数据库、设置身份验证、配置存储等。 3. 创建数据库表：
-在控制台中，您可以轻松创建和管理数据库表，配置字段类型及其属性。 4. 配置身份验证：
-在控制台中启用身份验证功能，选择所需的登录方式（如电子邮件或社交媒体）。 5. 上传文件：
-使用控制台中的存储功能上传和管理文件。 如何集成到前端项目 1. 初始化Supabase客户端 使用createClient()方法初始化Supabase客户端，这是与Supabase交互的入口点。示例代码如下：
-import { createClient } from &#39;@supabase/supabase-js&#39; // 替换为您项目的 supabaseUrl 和 API 密钥 const supabaseUrl = &#39;https://your-project.supabase.co&#39;; const supabaseKey = &#39;your-public-anon-key&#39;; const supabase = createClient(supabaseUrl, supabaseKey); 2. 数据库操作 查询数据:
-const { data, error } = await supabase.
-
-    <div class="card-actions justify-between items-center mt-4">
-      <div class="flex items-center">
-  
-  <span>@</span>
-  
-
-  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
-  
-    <span itemprop="name">GuanCun</span>
-  
-  </span>
-</div>
-
-
-      <div class="flex items-center">
-        <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>1分钟阅读</span>
-      </div>
-    </div>
-  </div>
-</a>
-
-      </div>
     
     </div>
     
@@ -509,16 +453,12 @@ const { data, error } = await supabase.
 
   
   
-    
-  
-  <script src="/js/grid.min.js"></script>
+  <script src="/js/grid.js"></script>
 
 
 
 
-  
-
-<script src="/js/main.min.js"></script>
+<script src="/js/main.js"></script>
 
     
 
