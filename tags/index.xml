@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on GuanCun 的博客</title>
-    <link>https://guancun.github.io/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on GuanCun 的博客</description>
     <generator>Hugo</generator>
     <language>zh-Hans</language>
     <lastBuildDate>Wed, 30 Oct 2024 17:18:53 +0800</lastBuildDate>
-    <atom:link href="https://guancun.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MacBook</title>
-      <link>https://guancun.github.io/tags/macbook/</link>
+      <link>http://localhost:1313/tags/macbook/</link>
       <pubDate>Wed, 30 Oct 2024 17:18:53 +0800</pubDate>
-      <guid>https://guancun.github.io/tags/macbook/</guid>
+      <guid>http://localhost:1313/tags/macbook/</guid>
       <description></description>
     </item>
     <item>
       <title>Supabase</title>
-      <link>https://guancun.github.io/tags/supabase/</link>
+      <link>http://localhost:1313/tags/supabase/</link>
       <pubDate>Tue, 22 Oct 2024 14:26:14 +0800</pubDate>
-      <guid>https://guancun.github.io/tags/supabase/</guid>
+      <guid>http://localhost:1313/tags/supabase/</guid>
       <description></description>
     </item>
   </channel>
