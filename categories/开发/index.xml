@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>开发 on GuanCun 的博客</title>
-    <link>http://localhost:1313/categories/%E5%BC%80%E5%8F%91/</link>
+    <link>https://guancun.github.io/categories/%E5%BC%80%E5%8F%91/</link>
     <description>Recent content in 开发 on GuanCun 的博客</description>
     <generator>Hugo</generator>
     <language>zh-Hans</language>
     <lastBuildDate>Wed, 30 Oct 2024 17:18:53 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://guancun.github.io/categories/%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CPU 过载与温度监控：我的 MacBook 使用体验</title>
-      <link>http://localhost:1313/posts/cpu-%E8%BF%87%E8%BD%BD%E4%B8%8E%E6%B8%A9%E5%BA%A6%E7%9B%91%E6%8E%A7%E6%88%91%E7%9A%84-macbook-%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/</link>
+      <link>https://guancun.github.io/posts/cpu-%E8%BF%87%E8%BD%BD%E4%B8%8E%E6%B8%A9%E5%BA%A6%E7%9B%91%E6%8E%A7%E6%88%91%E7%9A%84-macbook-%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/</link>
       <pubDate>Wed, 30 Oct 2024 17:18:53 +0800</pubDate>
-      <guid>http://localhost:1313/posts/cpu-%E8%BF%87%E8%BD%BD%E4%B8%8E%E6%B8%A9%E5%BA%A6%E7%9B%91%E6%8E%A7%E6%88%91%E7%9A%84-macbook-%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/</guid>
+      <guid>https://guancun.github.io/posts/cpu-%E8%BF%87%E8%BD%BD%E4%B8%8E%E6%B8%A9%E5%BA%A6%E7%9B%91%E6%8E%A7%E6%88%91%E7%9A%84-macbook-%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/</guid>
       <description>&lt;p&gt;今天偶然发现我的 MacBook 变得非常烫手，这是后台过量进程消耗系统资源的表现，而我当前并未运行大量内存或高功耗的应用程序。&lt;/p&gt;</description>
     </item>
   </channel>

@@ -3,14 +3,14 @@
   x-data
   :class="$store.darkMode.class()"
   :data-theme="$store.darkMode.theme()">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>如何获取 &lt;textarea&gt; 内部光标的页面坐标 | GuanCun 的博客</title>
 
     
 
-<link rel="canonical" href="http://localhost:1313/posts/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96-textarea-%E5%86%85%E9%83%A8%E5%85%89%E6%A0%87%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%9D%90%E6%A0%87/" />
+<link rel="canonical" href="https://guancun.github.io/posts/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96-textarea-%E5%86%85%E9%83%A8%E5%85%89%E6%A0%87%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%9D%90%E6%A0%87/" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.128.2">
 
 
-<meta property="og:url" content="http://localhost:1313/posts/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96-textarea-%E5%86%85%E9%83%A8%E5%85%89%E6%A0%87%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%9D%90%E6%A0%87/">
+<meta property="og:url" content="https://guancun.github.io/posts/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96-textarea-%E5%86%85%E9%83%A8%E5%85%89%E6%A0%87%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%9D%90%E6%A0%87/">
   <meta property="og:site_name" content="GuanCun 的博客">
   <meta property="og:title" content="如何获取 内部光标的页面坐标">
   <meta property="og:description" content="通常，我们能直接获取元素在页面上的精确坐标，然而当面对需要获取 &lt;textarea&gt; 内部光标的页面坐标时，我们遇到了麻烦。">
@@ -38,20 +38,22 @@
     <meta property="article:tag" content="JavaScript">
     <meta property="article:tag" content="HTMLInputElement">
     <meta property="article:tag" content="DOMRect">
-    <meta property="og:image" content="http://localhost:1313/posts/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96-textarea-%E5%86%85%E9%83%A8%E5%85%89%E6%A0%87%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%9D%90%E6%A0%87/cover.jpg">
+    <meta property="og:image" content="https://guancun.github.io/posts/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96-textarea-%E5%86%85%E9%83%A8%E5%85%89%E6%A0%87%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%9D%90%E6%A0%87/cover.jpg">
 
 
 
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="http://localhost:1313/posts/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96-textarea-%E5%86%85%E9%83%A8%E5%85%89%E6%A0%87%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%9D%90%E6%A0%87/cover.jpg">
+  <meta name="twitter:image" content="https://guancun.github.io/posts/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96-textarea-%E5%86%85%E9%83%A8%E5%85%89%E6%A0%87%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%9D%90%E6%A0%87/cover.jpg">
   <meta name="twitter:title" content="如何获取 内部光标的页面坐标">
   <meta name="twitter:description" content="通常，我们能直接获取元素在页面上的精确坐标，然而当面对需要获取 &lt;textarea&gt; 内部光标的页面坐标时，我们遇到了麻烦。">
 
 
 
 
-<link rel="stylesheet" href="/css/output.css" />
+  
+
+<link rel="stylesheet" href="/css/output.min.css" />
 
 
 
@@ -113,7 +115,7 @@
       
       <div>
         
-        <a href="http://localhost:1313/" class="text-lg font-semibold cursor-pointer">
+        <a href="https://guancun.github.io/" class="text-lg font-semibold cursor-pointer">
           GuanCun 的博客
         </a>
         
@@ -352,7 +354,7 @@
   <meta itemprop="datePublished" content="2024-11-10T23:57:50+08:00">
   <meta itemprop="dateModified" content="2024-11-10T23:57:50+08:00">
   <meta itemprop="wordCount" content="249">
-  <meta itemprop="image" content="http://localhost:1313/posts/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96-textarea-%E5%86%85%E9%83%A8%E5%85%89%E6%A0%87%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%9D%90%E6%A0%87/cover.jpg">
+  <meta itemprop="image" content="https://guancun.github.io/posts/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96-textarea-%E5%86%85%E9%83%A8%E5%85%89%E6%A0%87%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%9D%90%E6%A0%87/cover.jpg">
   <meta itemprop="keywords" content="JavaScript,HTMLInputElement,DOMRect">
 
       <header>
@@ -395,19 +397,19 @@
   
   
     <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
-      href="https://x.com/intent/post?text=%e5%a6%82%e4%bd%95%e8%8e%b7%e5%8f%96%20%3ctextarea%3e%20%e5%86%85%e9%83%a8%e5%85%89%e6%a0%87%e7%9a%84%e9%a1%b5%e9%9d%a2%e5%9d%90%e6%a0%87&amp;url=http://localhost:1313/posts/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96-textarea-%E5%86%85%E9%83%A8%E5%85%89%E6%A0%87%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%9D%90%E6%A0%87/" target="_blank" rel="noopener noreferrer"
+      href="https://x.com/intent/post?text=%e5%a6%82%e4%bd%95%e8%8e%b7%e5%8f%96%20%3ctextarea%3e%20%e5%86%85%e9%83%a8%e5%85%89%e6%a0%87%e7%9a%84%e9%a1%b5%e9%9d%a2%e5%9d%90%e6%a0%87&amp;url=https://guancun.github.io/posts/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96-textarea-%E5%86%85%E9%83%A8%E5%85%89%E6%A0%87%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%9D%90%E6%A0%87/" target="_blank" rel="noopener noreferrer"
       title="Share on X">
       <ion-icon class="group-hover:text-primary-content" name="logo-x"></ion-icon>
     </a>
   
     <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
-      href="https://facebook.com/sharer/sharer.php?u=http://localhost:1313/posts/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96-textarea-%E5%86%85%E9%83%A8%E5%85%89%E6%A0%87%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%9D%90%E6%A0%87/" target="_blank" rel="noopener noreferrer"
+      href="https://facebook.com/sharer/sharer.php?u=https://guancun.github.io/posts/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96-textarea-%E5%86%85%E9%83%A8%E5%85%89%E6%A0%87%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%9D%90%E6%A0%87/" target="_blank" rel="noopener noreferrer"
       title="Share on Facebook">
       <ion-icon class="group-hover:text-primary-content" name="logo-facebook"></ion-icon>
     </a>
   
     <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
-      href="https://wa.me/?text=%e5%a6%82%e4%bd%95%e8%8e%b7%e5%8f%96%20%3ctextarea%3e%20%e5%86%85%e9%83%a8%e5%85%89%e6%a0%87%e7%9a%84%e9%a1%b5%e9%9d%a2%e5%9d%90%e6%a0%87%20http://localhost:1313/posts/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96-textarea-%E5%86%85%E9%83%A8%E5%85%89%E6%A0%87%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%9D%90%E6%A0%87/" target="_blank" rel="noopener noreferrer"
+      href="https://wa.me/?text=%e5%a6%82%e4%bd%95%e8%8e%b7%e5%8f%96%20%3ctextarea%3e%20%e5%86%85%e9%83%a8%e5%85%89%e6%a0%87%e7%9a%84%e9%a1%b5%e9%9d%a2%e5%9d%90%e6%a0%87%20https://guancun.github.io/posts/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96-textarea-%E5%86%85%E9%83%A8%E5%85%89%E6%A0%87%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%9D%90%E6%A0%87/" target="_blank" rel="noopener noreferrer"
       title="Share on WhatsApp">
       <ion-icon class="group-hover:text-primary-content" name="logo-whatsapp"></ion-icon>
     </a>
@@ -575,7 +577,7 @@
     window.disqus_config = function () {
         this.page.identifier = '\/posts\/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96-textarea-%E5%86%85%E9%83%A8%E5%85%89%E6%A0%87%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%9D%90%E6%A0%87\/';
         this.page.title = '如何获取 \u003ctextarea\u003e 内部光标的页面坐标';
-        this.page.url = 'http:\/\/localhost:1313\/posts\/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96-textarea-%E5%86%85%E9%83%A8%E5%85%89%E6%A0%87%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%9D%90%E6%A0%87\/';
+        this.page.url = 'https:\/\/guancun.github.io\/posts\/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96-textarea-%E5%86%85%E9%83%A8%E5%85%89%E6%A0%87%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%9D%90%E6%A0%87\/';
     };
     function initDisqus() {
         if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
@@ -746,12 +748,16 @@
 
   
   
-  <script src="/js/grid.js"></script>
+    
+  
+  <script src="/js/grid.min.js"></script>
 
 
 
 
-<script src="/js/main.js"></script>
+  
+
+<script src="/js/main.min.js"></script>
 
     
 

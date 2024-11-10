@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on GuanCun 的博客</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://guancun.github.io/tags/</link>
     <description>Recent content in Tags on GuanCun 的博客</description>
     <generator>Hugo</generator>
     <language>zh-Hans</language>
     <lastBuildDate>Sun, 10 Nov 2024 23:57:50 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://guancun.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DOMRect</title>
-      <link>http://localhost:1313/tags/domrect/</link>
+      <link>https://guancun.github.io/tags/domrect/</link>
       <pubDate>Sun, 10 Nov 2024 23:57:50 +0800</pubDate>
-      <guid>http://localhost:1313/tags/domrect/</guid>
+      <guid>https://guancun.github.io/tags/domrect/</guid>
       <description></description>
     </item>
     <item>
       <title>HTMLInputElement</title>
-      <link>http://localhost:1313/tags/htmlinputelement/</link>
+      <link>https://guancun.github.io/tags/htmlinputelement/</link>
       <pubDate>Sun, 10 Nov 2024 23:57:50 +0800</pubDate>
-      <guid>http://localhost:1313/tags/htmlinputelement/</guid>
+      <guid>https://guancun.github.io/tags/htmlinputelement/</guid>
       <description></description>
     </item>
     <item>
       <title>JavaScript</title>
-      <link>http://localhost:1313/tags/javascript/</link>
+      <link>https://guancun.github.io/tags/javascript/</link>
       <pubDate>Sun, 10 Nov 2024 23:57:50 +0800</pubDate>
-      <guid>http://localhost:1313/tags/javascript/</guid>
+      <guid>https://guancun.github.io/tags/javascript/</guid>
       <description></description>
     </item>
     <item>
       <title>MacBook</title>
-      <link>http://localhost:1313/tags/macbook/</link>
+      <link>https://guancun.github.io/tags/macbook/</link>
       <pubDate>Wed, 30 Oct 2024 17:18:53 +0800</pubDate>
-      <guid>http://localhost:1313/tags/macbook/</guid>
+      <guid>https://guancun.github.io/tags/macbook/</guid>
       <description></description>
     </item>
     <item>
       <title>Supabase</title>
-      <link>http://localhost:1313/tags/supabase/</link>
+      <link>https://guancun.github.io/tags/supabase/</link>
       <pubDate>Tue, 22 Oct 2024 14:26:14 +0800</pubDate>
-      <guid>http://localhost:1313/tags/supabase/</guid>
+      <guid>https://guancun.github.io/tags/supabase/</guid>
       <description></description>
     </item>
   </channel>
