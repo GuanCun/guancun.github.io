@@ -6,8 +6,15 @@
     <description>Recent content in Posts on GuanCun 的博客</description>
     <generator>Hugo</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Sun, 10 Nov 2024 23:57:50 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 15 Nov 2024 00:57:38 +0800</lastBuildDate>
     <atom:link href="https://guancun.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何让 Hugo 个人博客被 Google Search 收录</title>
+      <link>https://guancun.github.io/posts/%E5%A6%82%E4%BD%95%E8%AE%A9-hugo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%A2%AB-google-search-%E6%94%B6%E5%BD%95/</link>
+      <pubDate>Fri, 15 Nov 2024 00:57:38 +0800</pubDate>
+      <guid>https://guancun.github.io/posts/%E5%A6%82%E4%BD%95%E8%AE%A9-hugo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%A2%AB-google-search-%E6%94%B6%E5%BD%95/</guid>
+      <description>&lt;p&gt;我的个人博客使用了 Hugo 构建，但是一直无法被 Google Search 收录。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>如何获取 &lt;textarea&gt; 内部光标的页面坐标</title>
       <link>https://guancun.github.io/posts/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96-textarea-%E5%86%85%E9%83%A8%E5%85%89%E6%A0%87%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%9D%90%E6%A0%87/</link>
