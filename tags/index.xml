@@ -6,8 +6,15 @@
     <description>Recent content in Tags on GuanCun 的博客</description>
     <generator>Hugo</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Fri, 15 Nov 2024 00:57:38 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 23 Nov 2024 15:09:17 +0800</lastBuildDate>
     <atom:link href="https://guancun.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>猫</title>
+      <link>https://guancun.github.io/tags/%E7%8C%AB/</link>
+      <pubDate>Sat, 23 Nov 2024 15:09:17 +0800</pubDate>
+      <guid>https://guancun.github.io/tags/%E7%8C%AB/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Hugo</title>
       <link>https://guancun.github.io/tags/hugo/</link>
