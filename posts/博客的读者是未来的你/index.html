@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="zh-Hans"
+  x-data
+  :class="$store.darkMode.class()"
+  :data-theme="$store.darkMode.theme()">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客的读者，是未来的你。 | GuanCun 的博客</title>
+
+    
+
+<link rel="canonical" href="https://guancun.github.io/posts/%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%AF%BB%E8%80%85%E6%98%AF%E6%9C%AA%E6%9D%A5%E7%9A%84%E4%BD%A0/" />
+
+
+
+<meta name="author" content="GuanCun" />
+<meta name="description" content="断更了几个月，这是我 2025 年的第一篇文章，想聊聊新一年的感想和规划。
+" />
+
+
+<meta name="keywords" content="感想">
+
+
+
+<meta name="generator" content="Hugo 0.128.2">
+
+
+<meta property="og:url" content="https://guancun.github.io/posts/%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%AF%BB%E8%80%85%E6%98%AF%E6%9C%AA%E6%9D%A5%E7%9A%84%E4%BD%A0/">
+  <meta property="og:site_name" content="GuanCun 的博客">
+  <meta property="og:title" content="博客的读者，是未来的你。">
+  <meta property="og:description" content="断更了几个月，这是我 2025 年的第一篇文章，想聊聊新一年的感想和规划。">
+  <meta property="og:locale" content="zh_Hans">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-09T01:34:15+08:00">
+    <meta property="article:modified_time" content="2025-03-09T01:34:15+08:00">
+    <meta property="article:tag" content="感想">
+    <meta property="og:image" content="https://guancun.github.io/posts/%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%AF%BB%E8%80%85%E6%98%AF%E6%9C%AA%E6%9D%A5%E7%9A%84%E4%BD%A0/cover.jpg">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://guancun.github.io/posts/%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%AF%BB%E8%80%85%E6%98%AF%E6%9C%AA%E6%9D%A5%E7%9A%84%E4%BD%A0/cover.jpg">
+  <meta name="twitter:title" content="博客的读者，是未来的你。">
+  <meta name="twitter:description" content="断更了几个月，这是我 2025 年的第一篇文章，想聊聊新一年的感想和规划。">
+
+
+
+
+  
+
+<link rel="stylesheet" href="/css/output.min.css" />
+
+
+
+
+    
+
+
+<link rel="stylesheet" data-custom-syntax-highlighting />
+<style>
+  .chroma {
+    padding: 1em;
+    background-color: var(--dream-pre-bg, #f5f5f5);
+    border-radius: .5em;
+    overflow: auto;
+  }
+
+  html.dark .chroma {
+    background-color: var(--dream-pre-bg-dark, #262626);
+  }
+</style>
+
+
+
+
+
+
+
+
+
+    
+    <link rel="stylesheet" href="/css/custom.css" />
+    
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+
+  <body x-data="{
+    flip: false,
+  }">
+    
+    <div id="dream-global-bg"></div>
+
+    
+<nav x-data="{ isSticky: false }"
+  x-init="window.addEventListener('scroll', () => { isSticky = window.scrollY > 30 })"
+  class="sticky top-0 z-30 mt-4 lg:mt-8 py-4"
+  :class="{ 'bg-base-100 shadow-lg dark:border-b dark:border-base-content/30': isSticky }">
+
+  
+  <div class="container flex justify-between px-4">
+  
+    <section class="flex items-center gap-4">
+      <div class="avatar cursor-pointer hover:online" @click="flip = !flip" title="翻转一下！">
+        <div class="h-10 rounded-full">
+          <img src="/me/avatar.png" alt="GuanCun 的博客" />
+        </div>
+      </div>
+
+      
+      <div>
+        
+        <a href="https://guancun.github.io/" class="text-lg font-semibold cursor-pointer">
+          GuanCun 的博客
+        </a>
+        
+        
+        <div class="text-base-content/60 text-sm">博客的读者，是未来的你。</div>
+        
+      </div>
+      
+    </section>
+
+    <div class="dropdown dropdown-end sm:hidden">
+      <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
+        <ion-icon name="menu" class="text-2xl"></ion-icon>
+      </div>
+      <ul class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-md">
+        
+
+
+<li>
+  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="关于">
+    <ion-icon name="information-circle"></ion-icon>关于</div>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+  <a class="group inline-flex items-center p-2 cursor-pointer" href="/search" title="搜索">
+    <ion-icon name="search"></ion-icon>
+    搜索
+  </a>
+</li>
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="https://github.com/GuanCun" target="_blank" title="GitHub">
+    
+    <ion-icon name="logo-github"></ion-icon>
+    
+    GitHub
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="归档">
+    <ion-icon name="archive"></ion-icon>
+    归档
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="所有分类">
+    <ion-icon name="grid"></ion-icon>
+    所有分类
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/tags" title="所有标签">
+    <ion-icon name="pricetags"></ion-icon>
+    所有标签
+  </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </div>
+    <section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4">
+      
+      
+      
+      <div role="link" tabindex="0" class="text-sm font-semibold cursor-pointer hover:underline" @click="flip = !flip" title="关于">关于</div>
+      
+      
+
+      
+      
+        
+      
+
+      
+
+      
+      
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/search" title="搜索">
+  <ion-icon class="group-hover:text-primary-content" name="search"></ion-icon>
+</a>
+
+
+      
+      
+
+
+
+  
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://github.com/GuanCun" target="_blank" title="GitHub">
+    <ion-icon class="group-hover:text-primary-content" name="logo-github"></ion-icon>
+  </a>
+  
+
+
+
+      
+
+      <div class="dropdown dropdown-end dropdown-hover">
+        <div tabindex="0" role="button" class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" aria-label="Select an option">
+          <ion-icon class="group-hover:text-primary-content text-xl" name="menu"></ion-icon>
+        </div>
+        <ul class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-xl">
+          
+          
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="归档">
+    <ion-icon name="archive"></ion-icon>
+    归档
+  </a>
+</li>
+
+
+          
+          
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="所有分类">
+    <ion-icon name="grid"></ion-icon>
+    所有分类
+  </a>
+</li>
+
+
+          
+          
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/tags" title="所有标签">
+    <ion-icon name="pricetags"></ion-icon>
+    所有标签
+  </a>
+</li>
+
+
+          
+
+          
+          
+
+
+
+
+
+
+
+
+
+
+          
+        </ul>
+      </div>
+      
+    </section>
+  </div>
+</nav>
+
+
+    <div class="flip-container" :class="{ 'flip-it': flip }">
+      <div class="flipper">
+        <div class="front">
+          <div class="container">
+            
+<div class="mt-4 px-4">
+  
+  <div class="relative" x-data="{ height: '' }" x-init="height = $el.scrollHeight + 'px'">
+  
+    
+    <div class="absolute right-0 lg:w-36 xl:w-48 hidden lg:block" :style="{ height }">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#聊聊停更以来的变化和感想">聊聊停更以来的变化和感想</a></li>
+        <li><a href="#博客的读者是未来的你">博客的读者，是未来的你。</a></li>
+        <li><a href="#结尾">结尾</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+      <div class="dream-adsense px-5">
+      
+      </div>
+    </div>
+    
+    <article class="mx-auto prose prose-quoteless dark:prose-invert" id="dream-single-post-main" itemscope itemtype="http://schema.org/Article">
+      
+  <meta itemprop="name" content="博客的读者，是未来的你。">
+  <meta itemprop="description" content="断更了几个月，这是我 2025 年的第一篇文章，想聊聊新一年的感想和规划。">
+  <meta itemprop="datePublished" content="2025-03-09T01:34:15+08:00">
+  <meta itemprop="dateModified" content="2025-03-09T01:34:15+08:00">
+  <meta itemprop="wordCount" content="458">
+  <meta itemprop="image" content="https://guancun.github.io/posts/%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%AF%BB%E8%80%85%E6%98%AF%E6%9C%AA%E6%9D%A5%E7%9A%84%E4%BD%A0/cover.jpg">
+  <meta itemprop="keywords" content="感想">
+
+      <header>
+        <h1 itemprop="headline">博客的读者，是未来的你。</h1>
+        <p class="text-sm">
+          
+            <span data-format="luxon">2025-03-09T01:34:15&#43;08:00</span>
+          
+
+          | <span>1分钟阅读</span>
+
+          
+          | <span>更新于
+            
+              <span data-format="luxon">2025-03-09T01:34:15&#43;08:00</span>
+            </span>
+          
+        </p>
+        <div class="flex justify-between">
+          <div class="flex items-center">
+  
+  <span>@</span>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    <span itemprop="name">GuanCun</span>
+  
+  </span>
+</div>
+
+
+          <div class="flex items-center gap-2">
+  
+  
+
+  
+  
+  
+  
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://x.com/intent/post?text=%e5%8d%9a%e5%ae%a2%e7%9a%84%e8%af%bb%e8%80%85%ef%bc%8c%e6%98%af%e6%9c%aa%e6%9d%a5%e7%9a%84%e4%bd%a0%e3%80%82&amp;url=https://guancun.github.io/posts/%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%AF%BB%E8%80%85%E6%98%AF%E6%9C%AA%E6%9D%A5%E7%9A%84%E4%BD%A0/" target="_blank" rel="noopener noreferrer"
+      title="Share on X">
+      <ion-icon class="group-hover:text-primary-content" name="logo-x"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://facebook.com/sharer/sharer.php?u=https://guancun.github.io/posts/%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%AF%BB%E8%80%85%E6%98%AF%E6%9C%AA%E6%9D%A5%E7%9A%84%E4%BD%A0/" target="_blank" rel="noopener noreferrer"
+      title="Share on Facebook">
+      <ion-icon class="group-hover:text-primary-content" name="logo-facebook"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://wa.me/?text=%e5%8d%9a%e5%ae%a2%e7%9a%84%e8%af%bb%e8%80%85%ef%bc%8c%e6%98%af%e6%9c%aa%e6%9d%a5%e7%9a%84%e4%bd%a0%e3%80%82%20https://guancun.github.io/posts/%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%AF%BB%E8%80%85%E6%98%AF%E6%9C%AA%E6%9D%A5%E7%9A%84%E4%BD%A0/" target="_blank" rel="noopener noreferrer"
+      title="Share on WhatsApp">
+      <ion-icon class="group-hover:text-primary-content" name="logo-whatsapp"></ion-icon>
+    </a>
+  
+
+  
+  
+</div>
+
+        </div>
+      </header>
+
+      
+
+      <p>断更了几个月，这是我 2025 年的第一篇文章，想聊聊新一年的感想和规划。</p>
+<hr>
+<h3 id="聊聊停更以来的变化和感想">聊聊停更以来的变化和感想</h3>
+<p>停更以来，借助 AI 上手学习 React.js、Next.js，Node.js，MySQL 等技术。因为我认为未来 Web 纯前端不是一个好的职业路线。而且我当下 Web 前端能力想要进一步提升，也需要从更多的维度去思考问题。</p>
+<p>我重新入门 Obsidian，通过日记+双链的方式快速构建和壮大自己各类内容体系。</p>
+<img src="image/index/1742115576331.png" alt="1742115576331"><p>我同时也思考了博客的未来，在 AI 时代是否有存在的意义。现在很多技术文章，AI 回答得更系统更准确。</p>
+<hr>
+<h3 id="博客的读者是未来的你">博客的读者，是未来的你。</h3>
+<p><a href="https://www.ruanyifeng.com/blog/2025/02/weekly-issue-339.html">阮一峰老师第 339 期周刊</a>的文摘分享的一篇文章《如果没有人读博客，为什么要写呢？》</p>
+<p>作者阐述：博客的目标读者，其实不是互联网人群，而是未来的你。</p>
+<p>没人会关心你分享的内容。你摄影是因为你看到了一些东西。你写博客是因为你在思考，因为你在观察，因为你希望把它放在某个地方。</p>
+<p>我深以为然。为自己而写，为思考而写，为未来的你而写。坚持写博客是记录成长的最好途径。</p>
+<hr>
+<h3 id="结尾">结尾</h3>
+<p>如果你也是这样的人，欢迎来到我的博客，一起分享你的想法，一起成长，一起成为未来的你。</p>
+
+      
+      <div class="divider"></div>
+      <div class="flex flex-col md:flex-row justify-between gap-4 py-4">
+        
+        <div></div>
+        
+
+        
+        <a class="group btn btn-outline" href="/posts/%E6%9C%89%E9%99%90%E9%A2%84%E7%AE%97%E5%86%85-mac-%E7%94%A8%E6%88%B7%E5%A6%82%E4%BD%95%E6%8C%91%E9%80%89%E5%A4%96%E6%8E%A5%E6%98%BE%E7%A4%BA%E5%99%A8/" title="有限预算内 Mac 用户如何挑选外接显示器">
+          <div class="inline-flex flex-col items-end">
+            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">下一页</span>
+            <span class="max-w-48 truncate">有限预算内 Mac 用户如何挑选外接显示器</span>
+          </div>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </a>
+        
+      </div>
+      
+    </article>
+  </div>
+
+  
+  <div class="divider max-w-[65ch] mx-auto"></div>
+
+  <section class="max-w-[65ch] mx-auto space-y-4">
+    
+<article>
+  <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+        this.page.identifier = '\/posts\/%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%AF%BB%E8%80%85%E6%98%AF%E6%9C%AA%E6%9D%A5%E7%9A%84%E4%BD%A0\/';
+        this.page.title = '博客的读者，是未来的你。';
+        this.page.url = 'https:\/\/guancun.github.io\/posts\/%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%AF%BB%E8%80%85%E6%98%AF%E6%9C%AA%E6%9D%A5%E7%9A%84%E4%BD%A0\/';
+    };
+    function initDisqus() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-guancun-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    };
+    setTimeout(() => {
+        initDisqus();
+    }, 3000);
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</article>
+
+
+
+<template x-if="['localhost', '127.0.0.1'].indexOf(window.location.hostname) == -1">
+  <article>
+    <script
+      src="https://utteranc.es/client.js"
+      repo="GuanCun/guancun.github.io"
+      issue-term="og:title"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </article>
+</template>
+
+
+
+
+
+
+  </section>
+  
+</div>
+
+
+            
+            <footer class="flex justify-between items-center gap-2 px-4 py-12">
+            
+              <div>
+  
+  <p>
+    © 2024 - 2025 GuanCun 的博客
+  </p>
+  
+
+  
+  <p class="text-sm">
+    🌱
+    <span class="text-base-content/60">
+      Powered by <a class="hover:underline" href="https://gohugo.io/" target="_blank">Hugo</a> with theme
+      <a class="hover:underline" href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</span
+    >
+  </p>
+  
+</div>
+
+              <div
+  x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center h-[32px] px-2 gap-2 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+            </footer>
+          </div>
+        </div>
+        <div class="back">
+          <div class="container">
+            
+            <div class="dream-grid">
+  
+  
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">关于我</div>
+
+        <div class="prose dark:prose-invert">
+          <p>当前博客网站还在测试阶段</p>
+
+        </div>
+      </div>
+    </article>
+  </div>
+  
+  
+
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">社交链接</div>
+
+        <ul class="menu menu-horizontal flex-wrap w-full px-0 [&_ion-icon]:text-lg">
+  
+  <li>
+    <a href="mailto:linguancun@163.com" title="Email">
+      <ion-icon name="mail"></ion-icon>
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="https://github.com/GuanCun" target="_blank" title="GitHub">
+      <ion-icon name="logo-github"></ion-icon>
+    </a>
+  </li>
+  
+</ul>
+
+      </div>
+    </article>
+  </div>
+  
+
+  
+</div>
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+  window.lightTheme = "emerald"
+  window.darkTheme = "forest"
+</script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+
+  
+  
+    
+  
+  <script src="/js/grid.min.js"></script>
+
+
+
+
+  
+
+<script src="/js/main.min.js"></script>
+
+    
+
+
+<script
+  src="https://cdn.jsdelivr.net/npm/luxon@1.26.0"
+  integrity="sha256-4sbTzmCCW9LGrIh5OsN8V5Pfdad1F1MwhLAOyXKnsE0="
+  crossorigin="anonymous"
+></script>
+<script>
+  format()
+
+  function format() {
+    document.querySelectorAll('span[data-format="luxon"]').forEach(el => {
+      const date = el.textContent
+
+      el.textContent = luxon.DateTime.fromISO(date, { locale: "zh" }).toFormat("yyyy年MM月dd日")
+    })
+  }
+</script>
+
+
+
+<script>
+  window.customSyntaxHighlighting = {
+    light: "/css/syntax-light.min.css",
+    dark: "/css/syntax-dark.min.css"
+  }
+
+  document.addEventListener('alpine:initialized', () => {
+    var isDark = Alpine.store('darkMode').isDark()
+    var customSyntaxHighlightingUrl = isDark ? window.customSyntaxHighlighting.dark : window.customSyntaxHighlighting.light
+
+    document
+      .querySelector('link[data-custom-syntax-highlighting]')
+      .setAttribute('href', customSyntaxHighlightingUrl)
+  })
+</script>
+
+
+
+
+    
+
+    
+
+    
+    
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-87HHCF9T94"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-87HHCF9T94');
+        }
+      </script>
+    
+  
+
+
+    
+
+    <script type="module" src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>
